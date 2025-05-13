@@ -1,5 +1,15 @@
 let currentPlayers = [];
 
+function renderLeaderboard(data) {
+  const leaderboard = document.getElementById('leaderboard');
+  leaderboard.innerHTML = '';
+  data.forEach((player, index) => {
+    const li = document.createElement('li');
+    li.textContent = `${index + 1}. ${player.name} - ${player.points} pts`;
+    leaderboard.appendChild(li);
+  });
+}
+
 async function fetchPlayers() {
   try {
     const response = await fetch('http://localhost:3000/api/players');
@@ -9,16 +19,6 @@ async function fetchPlayers() {
   } catch (error) {
     console.error('Failed to fetch player data:', error);
   }
-}
-
-function renderLeaderboard(data) {
-  const leaderboard = document.getElementById('leaderboard');
-  leaderboard.innerHTML = '';
-  data.forEach((player, index) => {
-    const li = document.createElement('li');
-    li.textContent = `${index + 1}. ${player.name} - ${player.points} pts`;
-    leaderboard.appendChild(li);
-  });
 }
 
 function shufflePlayers() {
