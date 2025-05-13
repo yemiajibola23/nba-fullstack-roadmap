@@ -1,62 +1,41 @@
-# 🏀 Day 5 Reflection — NBA Scoring Leaderboard App
+# 🏀 Day 4 Reflection — Mastering the Developer Environment
 
 ## 🎯 Objective
-Build a static frontend NBA scoring leaderboard using **HTML**, **CSS**, and **JavaScript** to practice DOM manipulation, layout, and interactivity — setting the stage for full stack and AI integrations.
+
+Build a fast, efficient, and enjoyable development workflow by setting up a **professional-grade terminal**, installing key shell enhancements, and integrating **ESLint + Prettier** for clean, consistent code across projects.
 
 ---
 
 ## ✅ What I Built
-- A clean, browser-based **NBA Scoring Leaderboard** displaying players sorted by total points.
-- A **“Shuffle Rankings”** button to simulate real-time updates by reordering the list on demand.
+
+- A customized and responsive **terminal + shell environment** using iTerm2, Zsh, and productivity plugins  
+- A **Git-aware prompt** with theme and branch context  
+- Integrated **ESLint (Airbnb style)** and **Prettier** into the project workspace for automated code quality enforcement
 
 ---
 
 ## 🔧 Implementation Details
 
-### 📄 `index.html`
-- Created app structure with:
-  - `<header>` containing the app title and shuffle button
-  - `<ul id="leaderboard">` for dynamic player rendering
-- Linked to external CSS and JS files
+### 💻 Terminal Environment
 
-### 🎨 `style.css`
-- Styled the UI for clarity and accessibility:
-  - Centered layout
-  - White card design for each leaderboard entry
-  - Clean spacing and shadows using Flexbox
+- Installed **iTerm2** to replace the default macOS Terminal for split panes, search, profiles, and better UI  
+- Installed **Oh My Zsh** to manage `.zshrc` configuration
 
-### 🧠 `script.js`
-- Defined a static `players` array (name + points)
-- Implemented `renderLeaderboard()` to populate the DOM
-- Used ES6 template literals to format items (`${index + 1}. ${player.name}`)
-- Implemented `shufflePlayers()` using `Array.sort()` with random comparator
-- Attached a `click` event to the Shuffle button
-- Clean use of modern JS (`const`, `forEach`, `sort`, arrow functions)
+### 🔌 Zsh Plugins
 
----
+- Enabled:
+  - `zsh-autosuggestions` – real-time command suggestions  
+  - `zsh-syntax-highlighting` – command colorization  
+  - `z` / `autojump` – rapid directory navigation
 
-## 🧪 Tools & Best Practices
-- ESLint (Airbnb style) + Prettier from Day 4 for linting and formatting
-- Semantic HTML
-- Scoped CSS
-- Modular, readable JavaScript
-- Used terminal enhancements (Oh My Zsh, plugins) to improve workflow
+### 🎨 Git Prompt & Theme
 
----
+- Fixed missing Git branch display in prompt  
+- Installed theme (**agnoster** or **powerlevel10k**) with Git integration  
+- Verified Git context appeared in prompt within project directory
 
-## 🧠 What I Learned
-- How to dynamically update the DOM using vanilla JavaScript
-- Importance of proper template string syntax (`${}` vs `$(...)`)
-- Reinforced fundamental JavaScript methods (`sort`, `forEach`)
-- Built confidence in creating interactive UIs with zero frameworks
-- Understood the benefit of linters and formatters during active development
+### 🔧 CLI Tooling
 
----
-
-## 🚀 Next Up: Day 6
-Ready to extend this into a full stack application by:
-- Creating a **Node.js + Express backend**
-- Serving leaderboard data via API
-- Laying the foundation for AI features like projected stats and trends
-
----
+- Installed `eza` as a modern `ls` replacement via Homebrew:
+  ```sh
+  alias ls='eza -lah --git'
