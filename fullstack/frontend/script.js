@@ -1,10 +1,12 @@
-const players = [
-  { name: 'LeBron James', points: 2432 },
-  { name: 'Luka Doncic', points: 2264 },
-  { name: 'Stephen Curry', points: 2198 },
-  { name: 'Giannis Antetokounmpo', points: 2112 },
-  { name: 'Jayson Tatum', points: 2045 },
-];
+async function fetchPlayers() {
+  try {
+    const response = await fetch('https://localhost:3000/players');
+    const data = await response.json();
+    renderLeaderboard(data);
+  } catch (error) {
+    console.error('Failed to fetch player data:', error);
+  }
+}
 
 const leaderboard = document.getElementById('leaderboard');
 
@@ -25,4 +27,4 @@ function shufflePlayers() {
 document.getElementById('shuffleBtn').addEventListener('click', shufflePlayers);
 
 // Initial Render
-renderLeaderboard(players);
+fetchPlayers();
