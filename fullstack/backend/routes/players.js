@@ -16,6 +16,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+      console.log('✅ req.body:', req.body);
     const { name, points } = req.body;
 
     if (typeof name !== 'string' || name.trim() === '') {
