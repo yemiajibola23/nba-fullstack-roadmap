@@ -25,7 +25,6 @@ This repo documents my journey building a full stack NBA data visualization and 
 - **Week 2:** Will add database persistence, seed NBA data, and begin laying the groundwork for AI-driven analysis.
 - **Week 2:** Replaced hardcoded player data with a real SQLite database, queried player stats with SQL, and learned backend persistence best practices.
 
-
 ---
 
 ## 📂 Folder Structure
@@ -44,4 +43,4 @@ This repo documents my journey building a full stack NBA data visualization and 
 ## 🔗 Useful Links
 
 - [Main Repo](https://github.com/yemiajibola23/nba-fullstack-roadmap)
-- [Reflections Folder](https://github.com/yemiajibola23/nba-fullstack-roadmap/tree/main/fullstack/notes)
+- [Reflections Folder](https://github.com/yemiajibola23/nba-fullstack-roadmap/tree/main/notes)
