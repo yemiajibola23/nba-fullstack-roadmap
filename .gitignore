@@ -1,3 +1,4 @@
 .env
 __pycache__/
 notes/*.md
+node_modules/
