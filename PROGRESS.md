@@ -16,6 +16,8 @@ This repo documents my journey building a full stack NBA data visualization and 
 | 6   | Build Express backend API                    | ✅ Completed | [Day 6](notes/day6-reflection.md) |
 | 7   | Connect frontend to backend via fetch()      | ✅ Completed | [Day 7](notes/day7-reflection.md) |
 | 8   | Add SQLite to Express backend                | ✅ Completed | [Day 8](notes/day8-reflection.md) |
+| 9 | Add POST endpoint to create players | ✅ Completed | [Day 9](notes/day9-reflection.md) |
+
 
 ---
 
