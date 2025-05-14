@@ -74,3 +74,7 @@ To use basketball as a lens for becoming a **production-grade full stack + AI en
 ## 🗂️ Daily Progress
 
 See [`PROGRESS.md`](./PROGRESS.md) for day-by-day logs and reflections.
+
+## ⚙️ Automation Docs
+
+- [Daily Reflection & Notion Sync Setup](notes/automation.md)
