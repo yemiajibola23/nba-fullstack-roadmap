@@ -47,5 +47,13 @@
 
 ---
 
+## 📸 Visual Architecture
+
+Here's a snapshot of the app structure as of Day 10:
+
+![Architecture Diagram](../docs/architecture-day10.png)
+
+---
+
 **Reflection Link:**  
 [notes/day10-reflection.md](../notes/day10-reflection.md)
