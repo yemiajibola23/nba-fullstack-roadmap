@@ -25,7 +25,7 @@ It’s part **sports analytics**, part **AI experiment**, and part **personal de
 ---
 
 ## 🏗️ Project Structure
-
+<pre> ```bash
 nba-fullstack-roadmap/
 ├── /setup # Terminal tools, CLI configs, Git aliases, etc.
 ├── /notes # Daily reflections, research, progress logs
@@ -36,7 +36,7 @@ nba-fullstack-roadmap/
 ├── /ios # iOS apps that consume backend/AI services
 ├── /portfolio # Polished final builds with documentation
 └── PROGRESS.md # Day-by-day learning and shipping log
-
+```</pre>
 
 ---
 

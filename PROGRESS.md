@@ -30,13 +30,7 @@ This repo documents my journey building a full stack NBA data visualization and 
 
 ## 📂 Folder Structure
 
-nba-fullstack-roadmap/
-├── backend/ # Express API
-├── frontend/ # Vanilla JS frontend (to be upgraded to React)
-├── landing-page/ # Day 4 landing experiment
-├── notes/ # Daily reflections (Markdown)
-├── PROGRESS.md
-└── README.md
+<pre> ```bash nba-fullstack-roadmap/ ├── backend/ # Express API ├── frontend/ # Vanilla JS frontend (to be upgraded to React) ├── landing-page/ # Day 4 landing experiment ├── notes/ # Daily reflections (Markdown) ├── PROGRESS.md └── README.md ``` </pre>
 
 ---
 
