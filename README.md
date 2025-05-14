@@ -78,3 +78,10 @@ See [`PROGRESS.md`](./PROGRESS.md) for day-by-day logs and reflections.
 ## ⚙️ Automation Docs
 
 - [Daily Reflection & Notion Sync Setup](notes/automation.md)
+
+## 🗂️ Project Architecture
+
+The following diagram shows how the frontend, backend, and database currently interact:
+
+![Architecture Diagram](docs/architecture-day10.png)
+
