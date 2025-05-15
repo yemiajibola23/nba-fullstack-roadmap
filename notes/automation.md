@@ -17,6 +17,7 @@ When you run:
 ```
 
 It:
+
 1. Saves the reflection content to a markdown file
 2. Updates your `PROGRESS.md` markdown table
 3. Pushes a new row to your linked Notion progress tracker

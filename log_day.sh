@@ -6,7 +6,7 @@ DAY_TITLE=$2
 # Format: day10-reflection.md
 FILENAME="day${DAY_NUMBER}-reflection.md"
 FILEPATH="notes/${FILENAME}"
-PROGRESS_FILE="PROGRESS.md"
+PROGRESS_FILE="docs/PROGRESS.md"
 
 # Create notes directory if it doesn't exist
 mkdir -p notes
