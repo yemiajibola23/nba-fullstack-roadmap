@@ -19,6 +19,7 @@ This repo documents my journey building a full stack NBA data visualization and 
 | 9 | Add POST endpoint to create players | ✅ Completed | [Day 9](notes/day9-reflection.md) |
 | 10  | Form Handling, Input Validation, and Server Integration | ✅ Completed | [Day 10](notes/day10-reflection.md) |
 | 11 | Backend refactor & POST route testing ✅ Completed | [Day 11](notes/day11-reflection.md)|
+| 12 | Delete Player (DELETE) | ✅ Completed | [Day 12](notes/day12-reflection.md) |
 
 
 ---
