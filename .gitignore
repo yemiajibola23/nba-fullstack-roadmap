@@ -4,3 +4,4 @@ node_modules/
 nba.db
 .DS_Store
 backup/
+docs/SSOT.md
