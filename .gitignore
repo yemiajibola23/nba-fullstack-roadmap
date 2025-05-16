@@ -3,3 +3,4 @@ __pycache__/
 node_modules/
 nba.db
 .DS_Store
+backup/
