@@ -18,6 +18,7 @@ This repo documents my journey building a full stack NBA data visualization and 
 | 8   | Add SQLite to Express backend                | ✅ Completed | [Day 8](notes/day8-reflection.md) |
 | 9 | Add POST endpoint to create players | ✅ Completed | [Day 9](notes/day9-reflection.md) |
 | 10  | Form Handling, Input Validation, and Server Integration | ✅ Completed | [Day 10](notes/day10-reflection.md) |
+| 11 | Backend refactor & POST route testing | Backend | Completed | Medium | 6 | 6 | Cleaned up and restructured the backend using better-sqlite3. POST route finally works! Big win after a messy debugging journey. | Backend,POST,Modularization,Debugging | May 15, 2025 |
 
 
 ---
