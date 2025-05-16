@@ -1,8 +1,0 @@
-### Create a new player
-POST http://localhost:3000/api/players
-Content-Type: application/json
-
-{
-  "name": "Victor Wembanyama",
-  "points": 1842
-}
