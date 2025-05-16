@@ -27,6 +27,7 @@ This document tracks all features, enhancements, and refactors we’ve intention
 - [ ] Update `README.md` with high-level architectural summaries
 - [ ] Consider GitHub Actions to lint/refactor markdown files
 - [ ] Automate or semi-automate updates to docs/curriculum.md after each day
+- [ ] Integrate nodemon for automatic server starting/stopping
 
 ---
 

@@ -1,11 +1,3 @@
-# 🏀 Full Stack AI NBA Curriculum
-
-This document tracks the structured day-by-day roadmap for building a full stack AI-powered NBA project.
-
----
-
-## 📚 Curriculum Overview
-
 | Day | Topic                                   | Description                                                                 | Status         |
 | --- | --------------------------------------- | --------------------------------------------------------------------------- | -------------- |
 | 1   | Setup GitHub + Structure                | Created GitHub repo, `.gitignore`, and folders: `fullstack`, `ai`, `ios`    | ✅ Completed   |
@@ -18,21 +10,21 @@ This document tracks the structured day-by-day roadmap for building a full stack
 | 8   | Add New Player (POST)                   | Added form to frontend and POST route to backend, saved to DB               | ✅ Completed   |
 | 9   | Validation + Sync                       | Client/server validation, automatic re-fetch after submit                   | ✅ Completed   |
 | 10  | Architecture + Docs                     | Created architecture diagram, reflection templates, and enhanced logging    | ✅ Completed   |
-| 11  | Modularize Backend                      | Refactor backend into `routes/`, `controllers/`, and improve file structure | 🔄 In Progress |
-| 12  | Delete Player (DELETE)                  | Add `DELETE` route + frontend button to remove players                      | ⬜ Upcoming    |
+| 11  | Modularize Backend                      | Refactor backend into `routes/`, `controllers/`, and improve file structure | ✅ Completed   |
+| 12  | Delete Player (DELETE)                  | Add `DELETE` route + frontend button to remove players                      | 🔄 In Progress |
 | 13  | SQLite Model Layer                      | Abstract SQL logic into `models/`, prep for testing                         | ⬜ Upcoming    |
 | 14  | Testing API with Jest                   | Setup backend unit/integration testing with Jest                            | ⬜ Upcoming    |
-| 15  | Build Frontend with Vite + React        | Scaffold Vite app, connect to API, recreate leaderboard UI                  | ⬜ Upcoming    |
-| 16  | Advanced Vite Setup                     | Add Tailwind CSS, component structure, and initial routing                  | ⬜ Upcoming    |
-| 17  | React Form Hooks + Validation           | Build forms with controlled inputs, validation, and submission logic        | ⬜ Upcoming    |
-| 18  | State Management with Context           | Add global state to manage player list and user feedback                    | ⬜ Upcoming    |
-| 19  | Pagination + Loading States             | Implement frontend pagination + loading indicators for player data          | ⬜ Upcoming    |
-| 20  | Day 20 Assessment + Tech Debt           | Quiz on React, Vite, backend routes + address items in `TECH_DEBT.md`       | ⬜ Upcoming    |
-| 21  | Add Player Stats View                   | Show detailed player stats using React props and conditional rendering      | ⬜ Upcoming    |
-| 22  | SQLite: Foreign Keys + Joins            | Add new table (e.g. teams), show JOINs in backend routes                    | ⬜ Upcoming    |
-| 23  | Reusable React Components               | Break UI into components: `PlayerCard`, `TeamSelector`, etc.                | ⬜ Upcoming    |
-| 24  | Setup Charting with Chart.js            | Display player points/rebounds visually using charts                        | ⬜ Upcoming    |
-| 25  | Day 25 Assessment + Tech Debt           | Quiz on frontend React + backend data models. Tech debt round-up            | ⬜ Upcoming    |
+| 15  | React Setup (Vite + Component Scaffold) | Initialize React project, connect to backend, scaffold leaderboard          | ⬜ Upcoming    |
+| 16  | React State + Hooks                     | Render players with `useState`, `useEffect`, and form handling              | ⬜ Upcoming    |
+| 17  | React Delete + Optimistic Update        | Wire delete action in React with `fetch` and state update                   | ⬜ Upcoming    |
+| 18  | State Management with Context           | Add global state for player list and user feedback using React Context      | ⬜ Upcoming    |
+| 19  | Pagination + Loading States             | Add pagination to leaderboard + loading/error indicators                    | ⬜ Upcoming    |
+| 20  | Day 20 Assessment + Tech Debt           | Quiz on React, frontend architecture, and route flow. Address TECH_DEBT.md  | ⬜ Upcoming    |
+| 21  | Player Insights Panel                   | Add expandable section to each player card with more detailed stats         | ⬜ Upcoming    |
+| 22  | SQLite: Foreign Keys + Joins            | Add related table (teams), use JOINs in backend routes and React display    | ⬜ Upcoming    |
+| 23  | Reusable React Components               | Extract `PlayerCard`, `PlayerForm`, and `Leaderboard` as reusable components| ⬜ Upcoming    |
+| 24  | Charting with Chart.js or Recharts      | Visualize player scoring data with bar and line charts                      | ⬜ Upcoming    |
+| 25  | Day 25 Assessment + Frontend Reflection | Reflect on React progress, quiz on context, hooks, and component structure  | ⬜ Upcoming    |
 | 26  | Auth System: Signup/Login               | Build secure user login/signup with hashed passwords (bcrypt)               | ⬜ Upcoming    |
 | 27  | Auth Sessions + Middleware              | Create session-based login using tokens/cookies and auth middleware         | ⬜ Upcoming    |
 | 28  | User-Specific Data                      | Filter data by current user (e.g. only show their saved players)            | ⬜ Upcoming    |
@@ -78,12 +70,3 @@ This document tracks the structured day-by-day roadmap for building a full stack
 | 68  | Profile + Insights Dashboard            | Show saved players, rating history, time spent, and AI stats                | ⬜ Upcoming    |
 | 69  | Offline Support + UX Polish             | Cache last viewed players, improve error handling, responsive design        | ⬜ Upcoming    |
 | 70  | Day 70 Assessment + App Store Plan      | Full mobile quiz, roadmap to publishing (if desired), summarize AI usage    | ⬜ Upcoming    |
-
----
-
-### ✅ Notes
-
-- Reflections for each day are stored in [`/notes`](../notes)
-- Architecture diagrams stored in [`/docs`](.)
-- Progress tracked in [`PROGRESS.md`](./PROGRESS.md)
-- Assessment tracking and automation in progress
