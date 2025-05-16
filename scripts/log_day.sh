@@ -3,6 +3,7 @@
 # === Step 1: Auto-detect Day ===
 PROGRESS_FILE="docs/PROGRESS.md"
 NOTES_DIR="notes"
+CURRICULUM_FILE = "docs/curriculum.md"
 
 LAST_DAY=$(tail -n +2 "$PROGRESS_FILE" | awk -F '|' '{ print $2 }' | grep -Eo '[0-9]+' | sort -n | tail -1)
 DAY=$((LAST_DAY + 1))
@@ -30,12 +31,12 @@ while [[ -z "$TIME_ACT" ]]; do
   read -p "Actual time (hrs): " TIME_ACT
 done
 
-while [[ -z "$REFLECTION_SUMMARY" ]]; do
-  read -p "Reflection Summary (1-line for table): " REFLECTION_SUMMARY
+while [[ -z "$REFLECTION_LINK" ]]; do
+  read -p "Link to Day $DAY Reflection in this format: [Day 9](notes/day9-reflection.md): " REFLECTION_LINK
 done
 
 while [[ -z "$TAGS" ]]; do
-  read -p "Tags (comma-separated): " TAGS
+  read -p "Tags (comma-separated no spces): " TAGS
 done
 
 # === Step 3: Update Progress Table ===
@@ -45,11 +46,11 @@ if [ ! -f "$PROGRESS_FILE" ]; then
   echo "" >> "$PROGRESS_FILE"
   echo "## 📅 Daily Progress" >> "$PROGRESS_FILE"
   echo "" >> "$PROGRESS_FILE"
-  echo "| Day | Title | Area | Status | Effort | Est (hrs) | Act (hrs) | Reflection | Tags | Date |" >> "$PROGRESS_FILE"
+  echo "| Day | Title | Status | Reflection |" >> "$PROGRESS_FILE"
   echo "| --- | ----- | ---- | ------ | ------ | ----------| --------- | ---------- | ---- | ---- |" >> "$PROGRESS_FILE"
 fi
 
-TABLE_ROW="| ${DAY} | ${TASK_MODULE} | ${CATEGORY} | Completed | ${PRIORITY} | ${TIME_EST} | ${TIME_ACT} | ${REFLECTION_SUMMARY} | ${TAGS} | ${DATE} |"
+TABLE_ROW="| ${DAY} | ${TASK_MODULE} | ✅ Completed | ${REFLECTION_LINK} |"
 TMP_FILE=$(mktemp)
 
 awk -v row="$TABLE_ROW" '
@@ -101,7 +102,7 @@ ${PRIORITY}
 - Actual: ${TIME_ACT} hours
 
 ## 📝 Reflection Summary
-${REFLECTION_SUMMARY}
+${REFLECTION_LINK}
 
 ## 🏷️ Tags
 ${TAGS}
@@ -137,6 +138,22 @@ fi
 
 echo "📝 Reflection saved to $FILEPATH"
 
-# === Step 5: Update Notion (Optional) ===
+# === Step 5: Update Notion ===
 GITHUB_REFLECTION_LINK="https://github.com/yemiajibola23/nba-fullstack-roadmap/blob/main/$FILEPATH"
-python3 notion_update.py "$DAY" "$TASK_MODULE" "$GITHUB_REFLECTION_LINK"
+python3 notion_update.py "$DAY" "$TASK_MODULE" "$CATEGORY" "$PRIORITY" "$TIME_EST" "$TIME_ACT" "$GITHUB_REFLECTION_LINK" "$TAGS"
+
+echo "Notion table updated."
+
+# === Step 6: Update Curricuium ===
+# Path to curriculum file
+CURRICULUM_FILE="./curriculum.md"
+
+# Pad the day number to match table formatting (single space if < 10, double if >= 10)
+if [ "$day" -lt 10 ]; then
+  padded_day=" $day"
+else
+  padded_day="$day"
+fi
+
+# Update the line in curriculum.md that matches the Day
+sed -i '' -E "s|^\|[ ]*$padded_day[ ]*\|([^|]*\|){2}[ ]*[^|]*[ ]*\||| $padded_day | \1 ✅ Completed ||" "$CURRICULUM_FILE"
