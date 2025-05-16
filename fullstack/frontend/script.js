@@ -6,6 +6,33 @@ function renderLeaderboard(data) {
   data.forEach((player, index) => {
     const li = document.createElement('li');
     li.textContent = `${index + 1}. ${player.name} - ${player.points} pts`;
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Delete';
+    deleteBtn.style.marginLeft = '1rem';
+    deleteBtn.addEventListener('click', async () => {
+      try {
+        const res = await fetch(
+          `http://localhost:3000/api/players/${player.id}`,
+          {
+            method: 'DELETE',
+          }
+        );
+        console.log('Delete response:', res);
+        if (res.ok) {
+          li.remove();
+        } else {
+          // eslint-disable-next-line no-alert
+          alert('Failed to delete player.');
+        }
+      } catch (err) {
+        console.error('Delete failed:', err);
+        // eslint-disable-next-line no-alert
+        alert('An error occurred while deleting.');
+      }
+    });
+
+    li.appendChild(deleteBtn);
     leaderboard.appendChild(li);
   });
 }
