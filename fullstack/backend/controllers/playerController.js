@@ -25,4 +25,21 @@ const addPlayer = (req, res) => {
   }
 };
 
-module.exports = { getPlayers, addPlayer };
+const deletePlayer = (req, res) => {
+  const { id } = req.params;
+  try {
+    const stmt = db.prepare("DELETE FROM players WHERE id = ?");
+    const result = stmt.run(id);
+
+    if (result.changes == 0) {
+      return res.status(404).json({ error: "Player not found " });
+    }
+
+    res.json({ success: true });
+  } catch (err) {
+    console.error("DB DELETE failure:", err.message);
+    res.status(500).json({ error: "Failure to delete player", details: err.message });
+  }
+};
+
+module.exports = { getPlayers, addPlayer, deletePlayer };
