@@ -1,10 +1,11 @@
 #!/bin/bash
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 # === Step 1: Auto-detect Day ===
-PROGRESS_FILE="../docs/PROGRESS.md"
-NOTES_DIR="../notes"
-CURRICULUM_FILE="../docs/curriculum.md"
-echo "$CURRICULUM_FILE"
+PROGRESS_FILE="$SCRIPT_DIR/../docs/PROGRESS.md"
+CURRICULUM_FILE="$SCRIPT_DIR/../docs/curriculum.md"
+NOTES_DIR="$SCRIPT_DIR/../notes"
 
 LAST_DAY=$(tail -n +2 "$PROGRESS_FILE" | awk -F '|' '{ print $2 }' | grep -Eo '[0-9]+' | sort -n | tail -1)
 DAY=$((LAST_DAY + 1))
@@ -15,6 +16,10 @@ if [ -z "$DAY" ] || ! [[ "$DAY" =~ ^[0-9]+$ ]]; then
   echo "❌ Error: DAY must be a non-empty integer."
   exit 1
 fi
+REFLECTION_FILEPATH="notes/day${DAY}-reflection.md"
+REFLECTION_LINK="[Day ${DAY}](${REFLECTION_FILEPATH})"
+GITHUB_REFLECTION_LINK="https://github.com/yemiajibola23/nba-fullstack-roadmap/blob/main/$REFLECTION_FILEPATH"
+
 
 ### ----- Prompt: Day Details -----
 echo "📅 Logging Day $DAY"
@@ -25,7 +30,7 @@ while [[ -z "$TASK_MODULE" ]]; do
 done
 
 while [[ -z "$CATEGORY" ]]; do
-  read -p "Category (Frontend, Backend, AI, Tooling): " CATEGORY
+  read -p "Category (Frontend, Backend, AI, Tooling, Planning, DevOps, NBA-specific): " CATEGORY
 done
 
 while [[ -z "$PRIORITY" ]]; do
@@ -40,12 +45,8 @@ while [[ -z "$TIME_ACT" ]]; do
   read -p "Actual time (hrs): " TIME_ACT
 done
 
-while [[ -z "$REFLECTION_LINK" ]]; do
-  read -p "Link to Day $DAY Reflection in this format: [Day 9](notes/day9-reflection.md): " REFLECTION_LINK
-done
-
 while [[ -z "$TAGS" ]]; do
-  read -p "Tags (comma-separated no spces): " TAGS
+  read -p "Tags (comma-separated, no spaces): " TAGS
 done
 
 # === Step 3: Update Progress Table ===
@@ -57,8 +58,8 @@ if [ ! -f "$PROGRESS_FILE" ]; then
   echo "" >> "$PROGRESS_FILE"
 
 ### ----- Prompt: Day Details -----
-  echo "| Day | Title | Status | Reflection |" >> "$PROGRESS_FILE"
-  echo "| --- | ----- | ---- | ------ | ------ | ----------| --------- | ---------- | ---- | ---- |" >> "$PROGRESS_FILE"
+echo "| Day | Title | Status | Reflection |" >> "$PROGRESS_FILE"
+echo "| --- | ----- | ------ | ---------- |" >> "$PROGRESS_FILE"
 fi
 
 TABLE_ROW="| ${DAY} | ${TASK_MODULE} | ✅ Completed | ${REFLECTION_LINK} |"
@@ -87,24 +88,27 @@ mv "$TMP_FILE" "$PROGRESS_FILE"
 echo "✅ Progress table updated in $PROGRESS_FILE"
 
 # === Step 4: Update Notion ===
-GITHUB_REFLECTION_LINK="https://github.com/yemiajibola23/nba-fullstack-roadmap/blob/main/$FILEPATH"
+if ! [ -f "$SCRIPT_DIR/notion_update.py" ]; then
+  echo "❌ Error: notion_update.py not found in script directory."
+  exit 1
+fi
 
-### ----- Step: Update Notion -----
-python3 notion_update_refactored.py "$DAY" "$TASK_MODULE" "$CATEGORY" "Completed" "$PRIORITY" "$TIME_EST" "$TIME_ACT" "$GITHUB_REFLECTION_LINK" "$TAGS"
+python3 notion_update.py "$DAY" "$TASK_MODULE" "$CATEGORY" "Completed" "$PRIORITY" "$TIME_EST" "$TIME_ACT" "$GITHUB_REFLECTION_LINK" "$TAGS"
 
 echo "Notion table updated."
 
-# === Step 5: Update Curricuium ===
-# Pad the day number to match table formatting (single space if < 10, double if >= 10)
-if [ "$DAY" -lt 10 ]; then
-  padded_day=" $DAY"
-else
-  padded_day="$DAY"
-fi
+# === Step 5: Update Curriculum ===
+TMP_CURRICULUM=$(mktemp)
+awk -v day="$DAY" '
+BEGIN { FS=OFS="|" }
+NR <= 2 { print; next }
+{
+  day_num = $2
+  gsub(/^ +| +$/, "", day_num)
+  if (day_num == day) {
+    $5 = "✅ Completed"
+  }
+  print
+}' "${CURRICULUM_FILE}" > "$TMP_CURRICULUM" && mv "$TMP_CURRICULUM" "${CURRICULUM_FILE}"
 
-if [ -z "$padded_day" ]; then
-  echo "❌ Error: padded_day is empty — skipping curriculum update."
-  exit 1
-fi
-### ----- Step: Update Curriculum File -----
-sed -i '' -E "s|^\|[ ]*$padded_day[ ]*\|([^|]*\|){2}[ ]*[^|]*[ ]*\||| $padded_day | \1 ✅ Completed ||" "$CURRICULUM_FILE"
+echo "🎉 Day $DAY successfully logged!"

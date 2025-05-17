@@ -11,8 +11,8 @@
 | 9   | Validation + Sync                       | Client/server validation, automatic re-fetch after submit                   | ✅ Completed   |
 | 10  | Architecture + Docs                     | Created architecture diagram, reflection templates, and enhanced logging    | ✅ Completed   |
 | 11  | Modularize Backend                      | Refactor backend into `routes/`, `controllers/`, and improve file structure | ✅ Completed   |
-| 12  | Delete Player (DELETE)                  | Add `DELETE` route + frontend button to remove players                      | 🔄 In Progress |
-| 13  | SQLite Model Layer                      | Abstract SQL logic into `models/`, prep for testing                         | ⬜ Upcoming    |
+| 12  | Delete Player (DELETE)                  | Add `DELETE` route + frontend button to remove players                      | ✅ Completed   |
+| 13  | SQLite Model Layer                      | Abstract SQL logic into `models/`, prep for testing                         | ✅ Completed   |
 | 14  | Testing API with Jest                   | Setup backend unit/integration testing with Jest                            | ⬜ Upcoming    |
 | 15  | React Setup (Vite + Component Scaffold) | Initialize React project, connect to backend, scaffold leaderboard          | ⬜ Upcoming    |
 | 16  | React State + Hooks                     | Render players with `useState`, `useEffect`, and form handling              | ⬜ Upcoming    |
