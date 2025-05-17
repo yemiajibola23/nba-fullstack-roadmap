@@ -22,3 +22,5 @@ function deletePlayer(id) {
 
   return result.changes > 0;
 }
+
+module.exports = { getAllPlayers, addNewPlayer, deletePlayer };

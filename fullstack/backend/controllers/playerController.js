@@ -7,7 +7,7 @@ const getPlayers = (req, res) => {
 
 const addPlayer = (req, res) => {
   const { name, points } = req.body;
-  const result = playerModel.addPlayer(name, points);
+  const result = playerModel.addNewPlayer(name, points);
 
   res.status(201).json(result);
 };
