@@ -6,21 +6,21 @@ This repo documents my journey building a full stack NBA data visualization and 
 
 ## 📅 Daily Progress
 
-| Day | Title                                        | Status       | Reflection                        |
-| --- | -------------------------------------------- | ------------ | --------------------------------- |
-| 1   | Setup GitHub repo & project structure        | ✅ Completed | -                                 |
-| 2   | Setup Node.js project and install ESLint     | ✅ Completed | -                                 |
-| 3   | Configure ESLint, Prettier, Terminal plugins | ✅ Completed | -                                 |
-| 4   | Build static NBA leaderboard frontend        | ✅ Completed | [Day 4](notes/day4-reflection.md) |
-| 5   | Connect ESLint, Prettier to codebase         | ✅ Completed | [Day 5](notes/day5-reflection.md) |
-| 6   | Build Express backend API                    | ✅ Completed | [Day 6](notes/day6-reflection.md) |
-| 7   | Connect frontend to backend via fetch()      | ✅ Completed | [Day 7](notes/day7-reflection.md) |
-| 8   | Add SQLite to Express backend                | ✅ Completed | [Day 8](notes/day8-reflection.md) |
-| 9 | Add POST endpoint to create players | ✅ Completed | [Day 9](notes/day9-reflection.md) |
+| Day | Title                                                   | Status       | Reflection                          |
+| --- | ------------------------------------------------------- | ------------ | ----------------------------------- |
+| 1   | Setup GitHub repo & project structure                   | ✅ Completed | -                                   |
+| 2   | Setup Node.js project and install ESLint                | ✅ Completed | -                                   |
+| 3   | Configure ESLint, Prettier, Terminal plugins            | ✅ Completed | -                                   |
+| 4   | Build static NBA leaderboard frontend                   | ✅ Completed | [Day 4](notes/day4-reflection.md)   |
+| 5   | Connect ESLint, Prettier to codebase                    | ✅ Completed | [Day 5](notes/day5-reflection.md)   |
+| 6   | Build Express backend API                               | ✅ Completed | [Day 6](notes/day6-reflection.md)   |
+| 7   | Connect frontend to backend via fetch()                 | ✅ Completed | [Day 7](notes/day7-reflection.md)   |
+| 8   | Add SQLite to Express backend                           | ✅ Completed | [Day 8](notes/day8-reflection.md)   |
+| 9   | Add POST endpoint to create players                     | ✅ Completed | [Day 9](notes/day9-reflection.md)   |
 | 10  | Form Handling, Input Validation, and Server Integration | ✅ Completed | [Day 10](notes/day10-reflection.md) |
-| 11 | Backend refactor & POST route testing ✅ Completed | [Day 11](notes/day11-reflection.md)|
-| 12 | Delete Player (DELETE) | ✅ Completed | [Day 12](notes/day12-reflection.md) |
-
+| 11  | Backend refactor & POST route testing                   | ✅ Completed | [Day 11](notes/day11-reflection.md) |
+| 12  | Delete Player (DELETE)                                  | ✅ Completed | [Day 12](notes/day12-reflection.md) |
+| 13  | SQLite Model Layer                                      | ✅ Completed | [Day 13](notes/day13-reflection.md) |
 
 ---
 
