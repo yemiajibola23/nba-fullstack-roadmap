@@ -21,6 +21,7 @@ This repo documents my journey building a full stack NBA data visualization and 
 | 11  | Backend refactor & POST route testing                   | ✅ Completed | [Day 11](notes/day11-reflection.md) |
 | 12  | Delete Player (DELETE)                                  | ✅ Completed | [Day 12](notes/day12-reflection.md) |
 | 13  | SQLite Model Layer                                      | ✅ Completed | [Day 13](notes/day13-reflection.md) |
+| 14  | API Testing with Jest                                   | ✅ Completed | [Day 14](notes/day14-reflection.md) |
 
 ---
 
