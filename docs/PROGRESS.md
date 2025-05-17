@@ -22,6 +22,7 @@ This repo documents my journey building a full stack NBA data visualization and 
 | 12  | Delete Player (DELETE)                                  | ✅ Completed | [Day 12](notes/day12-reflection.md) |
 | 13  | SQLite Model Layer                                      | ✅ Completed | [Day 13](notes/day13-reflection.md) |
 | 14  | API Testing with Jest                                   | ✅ Completed | [Day 14](notes/day14-reflection.md) |
+| 15  | React Setup with Vite                                   | ✅ Completed | [Day 15](notes/day15-reflection.md) |
 
 ---
 
