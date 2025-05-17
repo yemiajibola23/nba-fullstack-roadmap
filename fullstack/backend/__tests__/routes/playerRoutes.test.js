@@ -1,0 +1,46 @@
+const request = require("supertest");
+const app = require("../../app"); // adjust if your app.js is elsewhere
+
+describe("GET /api/players", () => {
+  it("should return a list of players", async () => {
+    const res = await request(app).get("/api/players");
+
+    expect(res.statusCode).toBe(200);
+    expect(Array.isArray(res.body)).toBe(true);
+  });
+});
+
+describe("POST /api/players", () => {
+  it("should create a new player and return it", async () => {
+    const newPlayer = {
+      name: "Test Player",
+      points: 42,
+    };
+
+    const res = await request(app).post("/api/players").send(newPlayer);
+
+    expect(res.statusCode).toBe(201);
+    expect(res.body).toHaveProperty("id");
+    expect(res.body.name).toBe(newPlayer.name);
+    expect(res.body.points).toBe(newPlayer.points);
+  });
+});
+
+describe("DELETE /api/players", () => {
+  it("should delete a new player and return confirmation", async () => {
+    const newPlayer = {
+      name: "LeBron James",
+      points: 40238,
+    };
+
+    const res = await request(app).post("/api/players").send(newPlayer);
+    const id = res.body.id;
+
+    const deleteRes = await request(app).delete(`/api/players/${id}`);
+    expect(deleteRes.statusCode).toBe(200);
+
+    const getRes = await request(app).get("/api/players");
+    const playerIds = getRes.body.map((player) => player.id);
+    expect(playerIds).not.toContain(id);
+  });
+});
