@@ -5,3 +5,6 @@ nba.db
 .DS_Store
 backup/
 docs/SSOT.md
+scripts/log_day.sh
+scripts/notion_update.py
+notes/automation.md
