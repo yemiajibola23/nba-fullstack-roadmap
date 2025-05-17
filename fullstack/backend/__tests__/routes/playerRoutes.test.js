@@ -1,5 +1,14 @@
 const request = require("supertest");
-const app = require("../../app"); // adjust if your app.js is elsewhere
+const app = require("../../app");
+const db = require("../../db/test");
+
+beforeEach(() => {
+  db.prepare("DELETE FROM players").run();
+});
+
+afterAll(() => {
+  db.close();
+});
 
 describe("GET /api/players", () => {
   it("should return a list of players", async () => {
