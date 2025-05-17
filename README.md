@@ -25,6 +25,7 @@ It’s part **sports analytics**, part **AI experiment**, and part **personal de
 ---
 
 ## 🏗️ Project Structure
+
 <pre>
 nba-fullstack-roadmap/
 ├── /setup # Terminal tools, CLI configs, Git aliases, etc.
@@ -75,13 +76,8 @@ To use basketball as a lens for becoming a **production-grade full stack + AI en
 
 See [`PROGRESS.md`](./docs/PROGRESS.md) for day-by-day logs and reflections.
 
-## ⚙️ Automation Docs
-
-- [Daily Reflection & Notion Sync Setup](notes/automation.md)
-
 ## 🗂️ Project Architecture
 
 The following diagram shows how the frontend, backend, and database currently interact:
 
 ![Architecture Diagram](docs/architecture-day10.png)
-
