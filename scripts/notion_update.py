@@ -1,3 +1,4 @@
+
 import os
 import sys
 import requests
@@ -16,63 +17,80 @@ headers = {
 }
 
 # Get command line arguments
-day = sys.argv[1]
-title = sys.argv[2]
-category = sys.argv[3]
-priority = sys.argv[4]
-estimated_time = sys.argv[5]
-actual_time = sys.argv[6]
-reflection_url = sys.argv[7]
-tags = sys.argv[8]
+try:
+    day = int(sys.argv[1])
+    title = sys.argv[2]
+    category = sys.argv[3]
+    status = sys.argv[4]
+    priority = sys.argv[5]
+    estimated_time = float(sys.argv[6])
+    actual_time = float(sys.argv[7])
+    reflection_url = sys.argv[8]
+    tags = sys.argv[9] if len(sys.argv) > 9 else ""
+except (IndexError, ValueError) as e:
+    print(f"❌ Error parsing arguments: {e}")
+    sys.exit(1)
 
-tag_list = tags.split(",")
-multi_select_tags = [{"name": tag.strip()} for tag in tag_list]
+# Convert tags into Notion multi-select format
+tag_list = [tag.strip() for tag in tags.split(",") if tag.strip()]
+multi_select_tags = [{"name": tag} for tag in tag_list]
 
-data = {
-    "parent": { "database_id": DATABASE_ID },
-    "properties": {
-        "Day #": {
-            "number": int(day)
-        },
-        "Task/Module": {
-            "title": [{
-                "text": { "content": title }
-            }]
-        },
-        "Category": {
-            "select": {
-                "name": category
+# Define your properties and handle common Notion schema mismatches
+properties = {
+    "Day #": {
+        "number": day
+    },
+    "Task/Module": {
+        "title": [
+            {
+                "text": {
+                    "content": title
+                }
             }
-        },
-        "Status": {
-            "select": {
-                "name": "Completed"
-            }
-        },
-        "Priority": {
-            "select": {
-                "name": priority
-            }
-        },
-        "Time Estimate (hrs)": {
-            "number": int(estimated_time)
-        },
-        "Actual Time (hrs)": {
-            "number":int(actual_time)
-        },
-        "Reflection": {
-            "url": reflection_url
-        },
-        "Tags": {
-            "multi-select": multi_select_tags
+        ]
+    },
+    "Category": {
+        "select": {
+            "name": category
         }
+    },
+    "Status": {
+        "select": {
+            "name": status
+        }
+    },
+    "Priority": {
+        "select": {
+            "name": priority
+        }
+    },
+    "Time Estimate (hrs)": {
+        "number": estimated_time
+    },
+    "Actual Time (hrs)": {
+        "number": actual_time
+    },
+    "Reflection": {
+        "url": reflection_url
     }
 }
 
-response = requests.post("https://api.notion.com/v1/pages", headers=headers, json=data)
+# Add Tags only if defined
+if tag_list:
+    properties["Tags"] = {
+        "multi_select": multi_select_tags
+    }
+
+# Make the Notion API request
+data = {
+    "parent": { "database_id": DATABASE_ID },
+    "properties": properties
+}
+
+response = requests.post("https://api.notion.com/v1/pages", json=data, headers=headers)
 
 if response.status_code == 200:
-    print("✅ Notion row created successfully.")
+    print("✅ Notion entry created successfully.")
 else:
     print(f"❌ Failed to create Notion row ({response.status_code}):")
     print(response.text)

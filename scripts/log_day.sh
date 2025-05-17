@@ -1,13 +1,22 @@
 #!/bin/bash
 
 # === Step 1: Auto-detect Day ===
-PROGRESS_FILE="docs/PROGRESS.md"
-NOTES_DIR="notes"
-CURRICULUM_FILE = "docs/curriculum.md"
+PROGRESS_FILE="../docs/PROGRESS.md"
+NOTES_DIR="../notes"
+CURRICULUM_FILE="../docs/curriculum.md"
+echo "$CURRICULUM_FILE"
 
 LAST_DAY=$(tail -n +2 "$PROGRESS_FILE" | awk -F '|' '{ print $2 }' | grep -Eo '[0-9]+' | sort -n | tail -1)
 DAY=$((LAST_DAY + 1))
 DATE=$(date +"%B %d, %Y")
+
+# Validate that DAY is a non-empty integer
+if [ -z "$DAY" ] || ! [[ "$DAY" =~ ^[0-9]+$ ]]; then
+  echo "❌ Error: DAY must be a non-empty integer."
+  exit 1
+fi
+
+### ----- Prompt: Day Details -----
 echo "📅 Logging Day $DAY"
 
 # === Step 2: Prompt + Validation ===
@@ -46,6 +55,8 @@ if [ ! -f "$PROGRESS_FILE" ]; then
   echo "" >> "$PROGRESS_FILE"
   echo "## 📅 Daily Progress" >> "$PROGRESS_FILE"
   echo "" >> "$PROGRESS_FILE"
+
+### ----- Prompt: Day Details -----
   echo "| Day | Title | Status | Reflection |" >> "$PROGRESS_FILE"
   echo "| --- | ----- | ---- | ------ | ------ | ----------| --------- | ---------- | ---- | ---- |" >> "$PROGRESS_FILE"
 fi
@@ -75,85 +86,25 @@ awk -v row="$TABLE_ROW" '
 mv "$TMP_FILE" "$PROGRESS_FILE"
 echo "✅ Progress table updated in $PROGRESS_FILE"
 
-# === Step 4: Create Reflection Markdown File ===
-mkdir -p "$NOTES_DIR"
-FILENAME="day${DAY}-reflection.md"
-FILEPATH="${NOTES_DIR}/${FILENAME}"
-
-read -p "📸 Include architecture diagram section? (y/n): " INCLUDE_DIAGRAM
-
-cat <<EOF > "$FILEPATH"
-# 📓 Day ${DAY}: ${TASK_MODULE}
-
-## 📆 Date
-${DATE}
-
-## 🧩 Task/Module
-${TASK_MODULE}
-
-## 🧠 Category
-${CATEGORY}
-
-## 🔥 Priority
-${PRIORITY}
-
-## ⏱️ Time
-- Estimated: ${TIME_EST} hours
-- Actual: ${TIME_ACT} hours
-
-## 📝 Reflection Summary
-${REFLECTION_LINK}
-
-## 🏷️ Tags
-${TAGS}
-
-## 📌 Detailed Reflection
-
-### ✅ What I Accomplished
-(TODO: Insert accomplishments here)
-
-### 🧠 What I Learned
-(TODO: Insert daily summary here)
-
-### 🔨 What I Built
-(TODO: Describe what you implemented)
-
-### 🧩 Challenges
-(TODO: List bugs or blockers)
-
-### 🚀 Next Steps
-(TODO: What’s next?)
-EOF
-
-if [[ "$INCLUDE_DIAGRAM" =~ ^[Yy]$ ]]; then
-  cat <<EOF >> "$FILEPATH"
-
-## 📸 Visual Architecture
-
-Here's a snapshot of the app structure as of Day ${DAY}:
-
-![Architecture Diagram](../docs/architecture-day${DAY}.png)
-EOF
-fi
-
-echo "📝 Reflection saved to $FILEPATH"
-
-# === Step 5: Update Notion ===
+# === Step 4: Update Notion ===
 GITHUB_REFLECTION_LINK="https://github.com/yemiajibola23/nba-fullstack-roadmap/blob/main/$FILEPATH"
-python3 notion_update.py "$DAY" "$TASK_MODULE" "$CATEGORY" "$PRIORITY" "$TIME_EST" "$TIME_ACT" "$GITHUB_REFLECTION_LINK" "$TAGS"
+
+### ----- Step: Update Notion -----
+python3 notion_update_refactored.py "$DAY" "$TASK_MODULE" "$CATEGORY" "Completed" "$PRIORITY" "$TIME_EST" "$TIME_ACT" "$GITHUB_REFLECTION_LINK" "$TAGS"
 
 echo "Notion table updated."
 
-# === Step 6: Update Curricuium ===
-# Path to curriculum file
-CURRICULUM_FILE="./curriculum.md"
-
+# === Step 5: Update Curricuium ===
 # Pad the day number to match table formatting (single space if < 10, double if >= 10)
-if [ "$day" -lt 10 ]; then
-  padded_day=" $day"
+if [ "$DAY" -lt 10 ]; then
+  padded_day=" $DAY"
 else
-  padded_day="$day"
+  padded_day="$DAY"
 fi
 
-# Update the line in curriculum.md that matches the Day
+if [ -z "$padded_day" ]; then
+  echo "❌ Error: padded_day is empty — skipping curriculum update."
+  exit 1
+fi
+### ----- Step: Update Curriculum File -----
 sed -i '' -E "s|^\|[ ]*$padded_day[ ]*\|([^|]*\|){2}[ ]*[^|]*[ ]*\||| $padded_day | \1 ✅ Completed ||" "$CURRICULUM_FILE"
