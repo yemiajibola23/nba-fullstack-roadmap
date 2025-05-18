@@ -15,7 +15,7 @@
 | 13  | SQLite Model Layer                      | Abstract SQL logic into `models/`, prep for testing                          | ✅ Completed |
 | 14  | Testing API with Jest                   | Setup backend unit/integration testing with Jest                             | ✅ Completed |
 | 15  | React Setup (Vite + Component Scaffold) | Initialize React project, connect to backend, scaffold leaderboard           | ✅ Completed |
-| 16  | React State + Hooks                     | Render players with `useState`, `useEffect`, and form handling               | ⬜ Upcoming  |
+| 16  | React State + Hooks                     | Render players with `useState`, `useEffect`, and form handling               |✅ Completed|
 | 17  | React Delete + Optimistic Update        | Wire delete action in React with `fetch` and state update                    | ⬜ Upcoming  |
 | 18  | State Management with Context           | Add global state for player list and user feedback using React Context       | ⬜ Upcoming  |
 | 19  | Pagination + Loading States             | Add pagination to leaderboard + loading/error indicators                     | ⬜ Upcoming  |
