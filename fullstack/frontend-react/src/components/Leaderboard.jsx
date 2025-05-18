@@ -14,6 +14,9 @@ function Leaderboard() {
   }, []);
 
   const handleDelete = (id) => {
+    // Save current state in case we need to rollback
+    const prevPlayers = [...players];
+
     // Optimistic UI update
     setPlayers((prevPlayers) =>
       prevPlayers.filter((player) => player.id !== id)
@@ -25,7 +28,7 @@ function Leaderboard() {
     })
       .then((res) => {
         if (!res.ok) {
-          // Optional: Falllback UI change or alert user
+          setPlayers(prevPlayers);
           console.error("Failed to delete player");
         }
       })
