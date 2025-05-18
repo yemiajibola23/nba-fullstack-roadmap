@@ -13,6 +13,26 @@ function Leaderboard() {
       .catch((err) => console.error("Error fetching players:", err));
   }, []);
 
+  const handleDelete = (id) => {
+    // Optimistic UI update
+    setPlayers((prevPlayers) =>
+      prevPlayers.filter((player) => player.id !== id)
+    );
+
+    // Fire backend DELETE request
+    fetch(`/api/players/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => {
+        if (!res.ok) {
+          // Optional: Falllback UI change or alert user
+          console.error("Failed to delete player");
+        }
+      })
+      .catch((err) => {
+        console.error("Error deleting player", err);
+      });
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newPlayer = {
@@ -65,7 +85,7 @@ function Leaderboard() {
       </form>
 
       {players.map((player) => (
-        <PlayerCard key={player.id} player={player} />
+        <PlayerCard key={player.id} player={player} onDelete={handleDelete} />
       ))}
     </div>
   );
