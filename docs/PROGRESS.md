@@ -24,6 +24,7 @@ This repo documents my journey building a full stack NBA data visualization and 
 | 14  | API Testing with Jest                                   | ✅ Completed | [Day 14](notes/day14-reflection.md) |
 | 15  | React Setup with Vite                                   | ✅ Completed | [Day 15](notes/day15-reflection.md) |
 | 16 | React State + Form Submission | ✅ Completed | [Day 16](notes/day16-reflection.md) |
+| 17 | React | ✅ Completed | [Day 17](notes/day17-reflection.md) |
 
 ---
 
