@@ -9,3 +9,4 @@ scripts/log_day.sh
 scripts/notion_update.py
 notes/automation.md
 fullstack/backend/db/nba.test.db
+docs/TECH_DEBT.md
