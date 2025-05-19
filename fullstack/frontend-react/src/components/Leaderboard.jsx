@@ -3,7 +3,7 @@ import { usePlayerContext } from "../contexts/PlayerContext";
 import PlayerCard from "./PlayerCard";
 
 function Leaderboard() {
-  const { players, feedback, addPlayer, deletePlayer } = usePlayerContext();
+  const { players, feedback, addPlayer, deletePlayer, loading, error } = usePlayerContext();
   const [name, setName] = useState("");
   const [points, setPoints] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -50,8 +50,11 @@ function Leaderboard() {
 
       {feedback && <p>{feedback}</p>}
 
+      {loading && <p>Loading players...</p>}
+      {error && <p className="error">{error}</p>}
+
       <div>
-        {currentPlayers.map((player) => (
+        {!loading && !error && currentPlayers.map((player) => (
           <PlayerCard key={player.id} player={player} onDelete={handleDelete} />
         ))}
       </div>
