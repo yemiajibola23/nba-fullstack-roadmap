@@ -25,6 +25,7 @@ This repo documents my journey building a full stack NBA data visualization and 
 | 15  | React Setup with Vite                                   | ✅ Completed | [Day 15](notes/day15-reflection.md) |
 | 16 | React State + Form Submission | ✅ Completed | [Day 16](notes/day16-reflection.md) |
 | 17 | React | ✅ Completed | [Day 17](notes/day17-reflection.md) |
+| 18 | React Context State Management | ✅ Completed | [Day 18](notes/day18-reflection.md) |
 
 ---
 
