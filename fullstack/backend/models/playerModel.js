@@ -5,6 +5,14 @@ function getAllPlayers() {
   return stmt.all();
 }
 
+function playerExists(name) {
+  const stmt = db.prepare(
+    "SELECT COUNT(*) AS count FROM players WHERE LOWER(name) = LOWER(?)"
+  );
+  const result = stmt.get(name);
+  return result.count > 0;
+}
+
 function addNewPlayer(name, points) {
   const stmt = db.prepare("INSERT INTO players (name, points) VALUES(?, ?)");
   const result = stmt.run(name, points);
@@ -23,4 +31,4 @@ function deletePlayer(id) {
   return result.changes > 0;
 }
 
-module.exports = { getAllPlayers, addNewPlayer, deletePlayer };
+module.exports = { getAllPlayers, addNewPlayer, deletePlayer, playerExists };
