@@ -3,7 +3,7 @@ function PlayerCard({ player, onDelete }) {
     <div className="player-card">
       <h3>{player.name}</h3>
       <p>Points: {player.points}</p>
-      <button onClick={() => onDelete(player.id)}>Delete</button>
+      <button className="delete-button" onClick={() => onDelete(player.id)} aria-label={`Delete ${player.name}`}>Delete</button>
     </div>
   );
 }
