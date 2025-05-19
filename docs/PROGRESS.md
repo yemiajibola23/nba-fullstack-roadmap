@@ -26,6 +26,7 @@ This repo documents my journey building a full stack NBA data visualization and 
 | 16 | React State + Form Submission | ✅ Completed | [Day 16](notes/day16-reflection.md) |
 | 17 | React | ✅ Completed | [Day 17](notes/day17-reflection.md) |
 | 18 | React Context State Management | ✅ Completed | [Day 18](notes/day18-reflection.md) |
+| 19 | Pagination + Loading States | ✅ Completed | [Day 19](notes/day19-reflection.md) |
 
 ---
 

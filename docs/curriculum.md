@@ -18,7 +18,7 @@
 | 16  | React State + Hooks                     | Render players with `useState`, `useEffect`, and form handling               |✅ Completed|
 | 17  | React Delete + Optimistic Update        | Wire delete action in React with `fetch` and state update                    |✅ Completed|
 | 18  | State Management with Context           | Add global state for player list and user feedback using React Context       |✅ Completed|
-| 19  | Pagination + Loading States             | Add pagination to leaderboard + loading/error indicators                     | ⬜ Upcoming  |
+| 19  | Pagination + Loading States             | Add pagination to leaderboard + loading/error indicators                     |✅ Completed|
 | 20  | Day 20 Assessment + Tech Debt           | Quiz on React, frontend architecture, and route flow. Address TECH_DEBT.md   | ⬜ Upcoming  |
 | 21  | Player Insights Panel                   | Add expandable section to each player card with more detailed stats          | ⬜ Upcoming  |
 | 22  | SQLite: Foreign Keys + Joins            | Add related table (teams), use JOINs in backend routes and React display     | ⬜ Upcoming  |
