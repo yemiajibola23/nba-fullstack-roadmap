@@ -3,16 +3,22 @@ import { usePlayerContext } from "../contexts/PlayerContext";
 import PlayerCard from "./PlayerCard";
 
 function Leaderboard() {
-  const { players, feedback, addPlayer, deletePlayer, loading, error } = usePlayerContext();
+  const { players, feedback, addPlayer, deletePlayer, loading, error } =
+    usePlayerContext();
   const [name, setName] = useState("");
   const [points, setPoints] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
+  const uniquePlayers = players.filter(
+    (player, index, self) =>
+      index ===
+      self.findIndex((p) => p.name.toLowerCase() === player.name.toLowerCase())
+  );
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentPlayers = players.slice(indexOfFirstItem, indexOfLastItem);
-  const totalPages = Math.ceil(players.length / itemsPerPage);
+  const currentPlayers = uniquePlayers.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(uniquePlayers.length / itemsPerPage);
 
   const handleDelete = (id) => {
     deletePlayer(id);
@@ -54,9 +60,15 @@ function Leaderboard() {
       {error && <p className="error">{error}</p>}
 
       <div>
-        {!loading && !error && currentPlayers.map((player) => (
-          <PlayerCard key={player.id} player={player} onDelete={handleDelete} />
-        ))}
+        {!loading &&
+          !error &&
+          currentPlayers.map((player) => (
+            <PlayerCard
+              key={player.id}
+              player={player}
+              onDelete={handleDelete}
+            />
+          ))}
       </div>
       <div className="pagination-controls">
         <button
