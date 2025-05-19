@@ -6,6 +6,13 @@ function Leaderboard() {
   const { players, feedback, addPlayer, deletePlayer } = usePlayerContext();
   const [name, setName] = useState("");
   const [points, setPoints] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 5;
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentPlayers = players.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(players.length / itemsPerPage);
 
   const handleDelete = (id) => {
     deletePlayer(id);
@@ -42,11 +49,39 @@ function Leaderboard() {
       </form>
 
       {feedback && <p>{feedback}</p>}
-      
+
       <div>
-        {players.map((player) => (
+        {currentPlayers.map((player) => (
           <PlayerCard key={player.id} player={player} onDelete={handleDelete} />
         ))}
+      </div>
+      <div className="pagination-controls">
+        <button
+          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+          disabled={currentPage === 1}
+        >
+          Previous
+        </button>
+
+        {[...Array(totalPages)].map((_, index) => {
+          const pageNum = index + 1;
+          return (
+            <button
+              key={pageNum}
+              onClick={() => setCurrentPage(pageNum)}
+              className={currentPage === pageNum ? "active" : ""}
+            >
+              {pageNum}
+            </button>
+          );
+        })}
+
+        <button
+          onClick={() => setCurrentPage((prev) => prev + 1)}
+          disabled={indexOfLastItem >= players.length}
+        >
+          Next
+        </button>
       </div>
     </div>
   );
