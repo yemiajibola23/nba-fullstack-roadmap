@@ -13,3 +13,4 @@
 | 19  | Quiz | Pagination + Loading UI                          | 4/5 ✅   | Confident with async UI feedback & context usage                                     | [Day 19 Quiz](quizzes/day19-quiz.md) | May 19, 2025 |
 | 20  | Quiz | Full Stack Assessment (React, API, Architecture) | 15/15 ✅ | Confident in full-stack concepts, React hooks, backend modularization, and debugging | [Day 20 Quiz](quizzes/day20-quiz.md) | May 19, 2025 |
 | 21  | Quiz | Player Insights + React Props                    | 4/5 ✅   | Strong grasp on props/state. Missed one nuance of undefined props.                   | [Day 21 Quiz](quizzes/day21-quiz.md) | May 20, 2025 |
+| 22  | Quiz | SQLite Foreign Keys + JOINs | 5/5 ✅ | Confident with relational schema + SQL JOINs | [Day 22 Quiz](quizzes/day22-quiz.md) | May 20, 2025 |
