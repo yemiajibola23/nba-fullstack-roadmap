@@ -4,7 +4,7 @@ This repo documents my journey building a full stack NBA data visualization and 
 
 ---
 
-## 📅 Daily Progress
+## 🗕️ Daily Progress
 
 | Day | Title                                                   | Status       | Reflection                          |
 | --- | ------------------------------------------------------- | ------------ | ----------------------------------- |
@@ -23,32 +23,35 @@ This repo documents my journey building a full stack NBA data visualization and 
 | 13  | SQLite Model Layer                                      | ✅ Completed | [Day 13](notes/day13-reflection.md) |
 | 14  | API Testing with Jest                                   | ✅ Completed | [Day 14](notes/day14-reflection.md) |
 | 15  | React Setup with Vite                                   | ✅ Completed | [Day 15](notes/day15-reflection.md) |
-| 16 | React State + Form Submission | ✅ Completed | [Day 16](notes/day16-reflection.md) |
-| 17 | React | ✅ Completed | [Day 17](notes/day17-reflection.md) |
-| 18 | React Context State Management | ✅ Completed | [Day 18](notes/day18-reflection.md) |
-| 19 | Pagination + Loading States | ✅ Completed | [Day 19](notes/day19-reflection.md) |
-| 20 | Assessment + Tech Debt | ✅ Completed | [Day 20](notes/day20-reflection.md) |
-| 21 | Add Player Insights Panel | ✅ Completed | [Day 21](notes/day21-reflection.md) |
+| 16  | React State + Form Submission                           | ✅ Completed | [Day 16](notes/day16-reflection.md) |
+| 17  | React Delete + UI Handling                              | ✅ Completed | [Day 17](notes/day17-reflection.md) |
+| 18  | React Context State Management                          | ✅ Completed | [Day 18](notes/day18-reflection.md) |
+| 19  | Pagination + Loading States                             | ✅ Completed | [Day 19](notes/day19-reflection.md) |
+| 20  | Assessment + Tech Debt                                  | ✅ Completed | [Day 20](notes/day20-reflection.md) |
+| 21  | Add Player Insights Panel                               | ✅ Completed | [Day 21](notes/day21-reflection.md) |
 
 ---
 
 ## 🧠 Weekly Highlights
 
 - **Week 1:** Fully configured ESLint + Prettier with proper Git workflows. Built a static NBA leaderboard and connected it to a real backend API.
-- **Week 2:** Will add database persistence, seed NBA data, and begin laying the groundwork for AI-driven analysis.
 - **Week 2:** Replaced hardcoded player data with a real SQLite database, queried player stats with SQL, and learned backend persistence best practices.
+- **Week 3:** Built robust React frontend with dynamic state handling, pagination, and reusable components. Added backend API tests and insights panel. Strong modularization and testing practices established.
 
 ---
 
 ## 📂 Folder Structure
 
 <pre> nba-fullstack-roadmap/ 
-├── backend/ # Express API 
-├── frontend/ # Vanilla JS frontend (to be upgraded to React) 
-├── landing-page/ # Day 4 landing experiment 
-├── notes/ # Daily reflections (Markdown) 
-├── PROGRESS.md 
-└── README.md 
+├── backend/             # Express API 
+├── frontend-react/      # React frontend (Vite-powered)
+├── landing-page/        # Day 4 static landing page
+├── notes/               # Daily reflections (Markdown) 
+├── quizzes/             # Daily quizzes and results
+├── scripts/             # Automation scripts (e.g. log_day.sh)
+├── docs/                # curriculum.md, TECH_DEBT.md, etc.
+├── PROGRESS.md
+└── README.md
 </pre>
 
 ---
