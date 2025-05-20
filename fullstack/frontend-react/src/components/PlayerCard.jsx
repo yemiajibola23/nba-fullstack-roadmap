@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PlayerInsights from "./PlayerInsights";
 
 function PlayerCard({ player, onDelete }) {
   const [showInsights, setShowInsights] = useState(false);
@@ -19,11 +20,7 @@ function PlayerCard({ player, onDelete }) {
         {showInsights ? "Hide Insights" : "Show Insights"}
       </button>
       {showInsights && (
-        <div className="player-insights">
-          <p>Assists: 8</p>
-          <p>Rebounds: 9</p>
-          <p>Team: Lakers</p>
-        </div>
+       <PlayerInsights assists={8} rebounds={9} team={"Lakers"} />
       )}
     </div>
   );
