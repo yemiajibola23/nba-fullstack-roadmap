@@ -11,3 +11,4 @@
 | 17  | Quiz | React Delete + Optimistic UI   | 5/5 ✅ | Confident with optimistic UI logic and fallback handling                    | [Day 17 Quiz](quizzes/day17-quiz.md) | May 18, 2025 |
 | 18  | Quiz | React Context State Management | 5/5 ✅ | Confident with `Context`, `Provider`, and shared state hooks                | [Day 18 Quiz](quizzes/day18-quiz.md) | May 18, 2025 |
 | 19  | Quiz | Pagination + Loading UI        | 4/5 ✅ | Confident with async UI feedback & context usage                            | [Day 19 Quiz](quizzes/day19-quiz.md) | May 19, 2025 |
+| 20  | Quiz | Full Stack Assessment (React, API, Architecture) | 15/15 ✅ | Confident in full-stack concepts, React hooks, backend modularization, and debugging | [Day 20 Quiz](quizzes/day20-quiz.md) | May 19, 2025 |
