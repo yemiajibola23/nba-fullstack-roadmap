@@ -6,7 +6,7 @@ function PlayerCard({ player, onDelete }) {
 
   return (
     <div className="player-card">
-      <h3>{player.name}</h3>
+      <h3>{player.name} <span style={{fontWeight: "normal"}}>({player.team || "No Team"})</span></h3>
       <p>Points: {player.points}</p>
       <button
         className="delete-button"
