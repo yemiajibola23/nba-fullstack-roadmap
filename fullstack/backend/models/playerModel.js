@@ -1,7 +1,16 @@
 const db = require("../db");
 
-function getAllPlayers() {
-  const stmt = db.prepare("SELECT * FROM players");
+function getAllPlayersAndTeams() {
+  const stmt = db.prepare(`
+    SELECT 
+      players.id,
+      players.name,
+      players.points,
+      teams.name AS team
+    FROM players
+    LEFT JOIN teams ON players.team_id = teams.id;
+
+    `);
   return stmt.all();
 }
 
@@ -31,4 +40,9 @@ function deletePlayer(id) {
   return result.changes > 0;
 }
 
-module.exports = { getAllPlayers, addNewPlayer, deletePlayer, playerExists };
+module.exports = {
+  getAllPlayersAndTeams,
+  addNewPlayer,
+  deletePlayer,
+  playerExists,
+};

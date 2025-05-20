@@ -1,7 +1,7 @@
 const playerModel = require("../models/playerModel");
 
-const getPlayers = (req, res) => {
-  const players = playerModel.getAllPlayers();
+const getPlayersAndTeams = (req, res) => {
+  const players = playerModel.getAllPlayersAndTeams();
   res.json(players);
 };
 
@@ -31,4 +31,4 @@ const deletePlayer = (req, res) => {
   }
 };
 
-module.exports = { getPlayers, addPlayer, deletePlayer };
+module.exports = { getPlayers: getPlayersAndTeams, addPlayer, deletePlayer };
