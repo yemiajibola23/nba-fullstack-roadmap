@@ -28,6 +28,7 @@ This repo documents my journey building a full stack NBA data visualization and 
 | 18 | React Context State Management | ✅ Completed | [Day 18](notes/day18-reflection.md) |
 | 19 | Pagination + Loading States | ✅ Completed | [Day 19](notes/day19-reflection.md) |
 | 20 | Assessment + Tech Debt | ✅ Completed | [Day 20](notes/day20-reflection.md) |
+| 21 | Add Player Insights Panel | ✅ Completed | [Day 21](notes/day21-reflection.md) |
 
 ---
 

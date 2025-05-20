@@ -20,7 +20,7 @@
 | 18  | State Management with Context           | Add global state for player list and user feedback using React Context       |✅ Completed|
 | 19  | Pagination + Loading States             | Add pagination to leaderboard + loading/error indicators                     |✅ Completed|
 | 20  | Day 20 Assessment + Tech Debt           | Quiz on React, frontend architecture, and route flow. Address TECH_DEBT.md   |✅ Completed|
-| 21  | Player Insights Panel                   | Add expandable section to each player card with more detailed stats          | ⬜ Upcoming  |
+| 21  | Player Insights Panel                   | Add expandable section to each player card with more detailed stats          |✅ Completed|
 | 22  | SQLite: Foreign Keys + Joins            | Add related table (teams), use JOINs in backend routes and React display     | ⬜ Upcoming  |
 | 23  | Reusable React Components               | Extract `PlayerCard`, `PlayerForm`, and `Leaderboard` as reusable components | ⬜ Upcoming  |
 | 24  | Charting with Chart.js or Recharts      | Visualize player scoring data with bar and line charts                       | ⬜ Upcoming  |
