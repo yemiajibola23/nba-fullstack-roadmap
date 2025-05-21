@@ -10,7 +10,7 @@ async function signup(req, res) {
 
   try {
     const hashedPassword = await bcrypt.hash(password, 10); // 10 salt rounds
-    const user = createUser(username, password);
+    const user = createUser(username, hashedPassword);
     res.status(201).json({ id: user.id, username: user.username });
   } catch (err) {
     if (err.code === "SQLITE_CONSTRAINT_UNIQUE") {
@@ -30,11 +30,16 @@ async function login(req, res) {
   }
 
   const user = findUserByUsername(username);
+  console.log("DB password:", user.password);
+  console.log("Attempted password:", password);
+
   if (!user) {
     return res.status(401).json({ error: "Invalid credentials" });
   }
 
   const match = await bcrypt.compare(password, user.password);
+  console.log(`Comparing ${user.password} with ${password}`);
+  console.log("Match result:", match);
   if (!match) {
     return res.status(401).json({ error: "Invalid credentials" });
   }
