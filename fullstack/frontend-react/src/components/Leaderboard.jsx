@@ -2,6 +2,7 @@ import { useState } from "react";
 import { usePlayerContext } from "../contexts/PlayerContext";
 import PlayerCard from "./PlayerCard";
 import PlayerForm from "./PlayerForm";
+import ChartPanel from "./ChartPanel";
 
 function Leaderboard() {
   const { players, feedback, addPlayer, deletePlayer, loading, error } =
@@ -36,7 +37,7 @@ function Leaderboard() {
 
       {loading && <p>Loading players...</p>}
       {error && <p className="error">{error}</p>}
-
+      <ChartPanel />
       <div>
         {!loading &&
           !error &&
