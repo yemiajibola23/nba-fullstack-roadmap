@@ -16,3 +16,4 @@
 | 22  | Quiz | SQLite Foreign Keys + JOINs                      | 5/5 ✅   | Confident with relational schema + SQL JOINs                                         | [Day 22 Quiz](quizzes/day22-quiz.md) | May 20, 2025 |
 | 23  | Quiz | Reusable React Components                        | 5/5 ✅   | Confident with props, modular components, and pagination                             | [Day 23 Quiz](quizzes/day23-quiz.md) | May 20, 2025 |
 | 24  | Quiz | Charting with Recharts + Tailwind                | 3/5 ❌   | Practiced data visualization and layout with Tailwind + Recharts                     | [Day 24 Quiz](quizzes/day24-quiz.md) | May 21, 2025 |
+| 24  | Quiz | Charting with Recharts + Tailwind                | 3/5 ❌   | Practiced data visualization and layout with Tailwind + Recharts                     | [Day 24 Quiz](quizzes/day24-quiz.md) | May 21, 2025 |
