@@ -30,5 +30,13 @@ db.exec(
     );`
 );
 
+db.exec(
+  `CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL
+  );`
+);
+
 console.log("✅ Database schema initialized with foreign key support");
 module.exports = db;
