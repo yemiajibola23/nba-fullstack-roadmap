@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { usePlayerContext } from "../contexts/PlayerContext";
 import PlayerCard from "./PlayerCard";
+import PlayerForm from "./PlayerForm";
 
 function Leaderboard() {
   const { players, feedback, addPlayer, deletePlayer, loading, error } =
     usePlayerContext();
-  const [name, setName] = useState("");
-  const [points, setPoints] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
+  
   const uniquePlayers = players.filter(
     (player, index, self) =>
       index ===
@@ -24,35 +24,13 @@ function Leaderboard() {
     deletePlayer(id);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const newPlayer = {
-      name: name,
-      points: parseInt(points),
-    };
-
+  const handleAdd = (newPlayer) => {
     addPlayer(newPlayer);
-    setName("");
-    setPoints("");
   };
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <input
-          type="number"
-          placeholder="Points"
-          value={points}
-          onChange={(e) => setPoints(e.target.value)}
-        />
-        <button type="submit">Add Player</button>
-      </form>
+      <PlayerForm onAdd={handleAdd} />
 
       {feedback && <p>{feedback}</p>}
 
