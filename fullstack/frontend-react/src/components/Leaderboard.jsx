@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { usePlayerContext } from "../contexts/PlayerContext";
-import PlayerCard from "./PlayerCard";
 import PlayerForm from "./PlayerForm";
 import ChartPanel from "./ChartPanel";
+import LeaderboardList from "./LeaderboardList";
 
 function Leaderboard() {
   const { players, feedback, addPlayer, deletePlayer, loading, error } =
     usePlayerContext();
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
-  
+
   const uniquePlayers = players.filter(
     (player, index, self) =>
       index ===
@@ -37,17 +37,15 @@ function Leaderboard() {
 
       {loading && <p>Loading players...</p>}
       {error && <p className="error">{error}</p>}
-      <ChartPanel />
-      <div>
-        {!loading &&
-          !error &&
-          currentPlayers.map((player) => (
-            <PlayerCard
-              key={player.id}
-              player={player}
-              onDelete={handleDelete}
-            />
-          ))}
+
+      <div className="max-w-4xl mx-auto px-4 py-8 space-y-8">
+        <ChartPanel />
+        <LeaderboardList
+          players={currentPlayers}
+          loading={loading}
+          error={error}
+          handleDelete={handleDelete}
+        />
       </div>
       <div className="pagination-controls">
         <button
