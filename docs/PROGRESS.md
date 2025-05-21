@@ -31,6 +31,7 @@ This repo documents my journey building a full stack NBA data visualization and 
 | 21  | Add Player Insights Panel                               | ✅ Completed | [Day 21](notes/day21-reflection.md) |
 | 22 | SQLite: Foreign Keys + Joins | ✅ Completed | [Day 22](notes/day22-reflection.md) |
 | 23 | React Components Refactor | ✅ Completed | [Day 23](notes/day23-reflection.md) |
+| 24 | Charting with Recharts + Tailwind | ✅ Completed | [Day 24](notes/day24-reflection.md) |
 
 ---
 
