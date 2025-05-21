@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import { PlayerContext } from "../contexts/PlayerContext";
+import { usePlayerContext } from "../contexts/PlayerContext";
 import {
   Bar,
   BarChart,
@@ -11,7 +10,7 @@ import {
 } from "recharts";
 
 function ChartPanel() {
-  const { players } = useContext(PlayerContext);
+  const { players } = usePlayerContext();
 
   const chartData = players.map((player) => ({
     name: player.name,
