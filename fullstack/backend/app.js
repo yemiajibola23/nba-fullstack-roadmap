@@ -9,7 +9,10 @@ const app = express();
 const playerRoutes = require("./routes/players");
 const authRoutes = require("./routes/auth");
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://localhost:3000',
+  credentials: true
+}));
 app.use(express.json());
 
 app.use(

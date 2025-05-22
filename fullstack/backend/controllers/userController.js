@@ -37,14 +37,28 @@ async function login(req, res) {
     return res.status(401).json({ error: "Invalid credentials" });
   }
 
-  const match = await bcrypt.compare(password, user.password);
+  const match = await bcrypt.compareSync(password, user.password);
   console.log(`Comparing ${user.password} with ${password}`);
   console.log("Match result:", match);
   if (!match) {
     return res.status(401).json({ error: "Invalid credentials" });
   }
 
-  res.json({ id: user.id, username: user.username });
+  req.session.userId = user.id;
+
+  res.json({ message: "Login successful", username: user.username });
 }
 
-module.exports = { signup, login };
+function logout(req, res) {
+  req.session.destroy((err) => {
+    if (err) {
+      console.error("Logout error", err);
+      return res.status(500).json({ error: "Could not log out" });
+    }
+
+    res.clearCookie("connect.sid");
+    res.json({ message: "Logout successful" });
+  });
+}
+
+module.exports = { signup, login, logout };
