@@ -33,6 +33,7 @@ This repo documents my journey building a full stack NBA data visualization and 
 | 23 | React Components Refactor | ✅ Completed | [Day 23](notes/day23-reflection.md) |
 | 24 | Charting with Recharts + Tailwind | ✅ Completed | [Day 24](notes/day24-reflection.md) |
 | 25 | Cumulative React Assessment + Reflection | ✅ Completed | [Day 25](notes/day25-reflection.md) |
+| 26 | Auth system: signup/login + UI | ✅ Completed | [Day 26](notes/day26-reflection.md) |
 
 ---
 
