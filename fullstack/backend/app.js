@@ -9,7 +9,7 @@ const app = express();
 const playerRoutes = require("./routes/players");
 const authRoutes = require("./routes/auth");
 const teamRoutes = require("./routes/teams");
-
+const profileRoutes = require("./routes/profile");
 app.use(
   cors({
     origin: "http://localhost:3000",
@@ -37,6 +37,7 @@ app.use(
 app.use("/api/players", playerRoutes);
 app.use("/api", authRoutes);
 app.use("/api/teams", teamRoutes);
+app, user("/api/profile", profileRoutes);
 
 app.get("/api/test-session", (req, res) => {
   if (!req.session.views) req.session.views = 0;
