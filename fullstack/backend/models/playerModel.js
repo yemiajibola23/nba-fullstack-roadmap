@@ -1,16 +1,27 @@
 const db = require("../db");
 
-function getAllPlayersAndTeams() {
-  const stmt = db.prepare(`
-    SELECT 
+function getPlayersByUser(userId) {
+  const stmt = db.prepare(
+    `SELECT 
       players.id,
       players.name,
       players.points,
-      teams.name AS team
+      players.team_id,
+      players.user_id,
+      teams.name AS team_name
     FROM players
-    LEFT JOIN teams ON players.team_id = teams.id;
+    LEFT JOIN teams ON players.team_id = teams.id
+    WHERE players.user_id = ?`
+  );
 
-    `);
+  const allPlayers = db.prepare("SELECT id, name, user_id FROM players").all();
+  console.log("📦 All players in DB:", allPlayers);
+
+  return stmt.all(userId);
+}
+
+function getAllTeams() {
+  const stmt = db.prepare("SELECT * FROM teams");
   return stmt.all();
 }
 
@@ -22,14 +33,18 @@ function playerExists(name) {
   return result.count > 0;
 }
 
-function addNewPlayer(name, points) {
-  const stmt = db.prepare("INSERT INTO players (name, points) VALUES(?, ?)");
-  const result = stmt.run(name, points);
+function addNewPlayer(name, points, userId, teamId) {
+  const stmt = db.prepare(
+    "INSERT INTO players (name, points, user_id, team_id) VALUES(?, ?, ?, ?)"
+  );
+  const result = stmt.run(name, points, userId, teamId);
 
   return {
     id: result.lastInsertRowid,
     name,
     points,
+    user_id: userId,
+    team_id: teamId,
   };
 }
 
@@ -41,7 +56,8 @@ function deletePlayer(id) {
 }
 
 module.exports = {
-  getAllPlayersAndTeams,
+  getPlayersByUser,
+  getAllTeams,
   addNewPlayer,
   deletePlayer,
   playerExists,

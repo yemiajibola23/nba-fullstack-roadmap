@@ -1,5 +1,9 @@
 const bcrypt = require("bcrypt");
-const { createUser, findUserByUsername } = require("../models/userModel");
+const {
+  createUser,
+  findUserByUsername,
+  findUserById,
+} = require("../models/userModel");
 
 async function signup(req, res) {
   const { username, password } = req.body;
@@ -11,6 +15,7 @@ async function signup(req, res) {
   try {
     const hashedPassword = await bcrypt.hash(password, 10); // 10 salt rounds
     const user = createUser(username, hashedPassword);
+    req.session.userId = user.id;
     res.status(201).json({ id: user.id, username: user.username });
   } catch (err) {
     if (err.code === "SQLITE_CONSTRAINT_UNIQUE") {
@@ -20,6 +25,19 @@ async function signup(req, res) {
       res.status(500).json({ error: "Server error" });
     }
   }
+}
+
+function getCurrentUser(req, res) {
+  if (!req.session.userId) {
+    return res.status(401).json({ error: "Not logged in" });
+  }
+
+  const user = findUserById(req.session.userId);
+  if (!user) {
+    return res.status(404).json({ error: "User not found" });
+  }
+
+  res.json({ userId: user.id, username: user.username });
 }
 
 async function login(req, res) {
@@ -46,7 +64,11 @@ async function login(req, res) {
 
   req.session.userId = user.id;
 
-  res.json({ message: "Login successful", username: user.username });
+  res.json({
+    message: "Login successful",
+    userId: user.id,
+    username: user.username,
+  });
 }
 
 function logout(req, res) {
@@ -61,4 +83,4 @@ function logout(req, res) {
   });
 }
 
-module.exports = { signup, login, logout };
+module.exports = { signup, login, logout, getCurrentUser };

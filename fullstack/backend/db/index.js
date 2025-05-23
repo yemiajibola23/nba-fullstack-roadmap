@@ -12,6 +12,7 @@ if (RESET_SCHEMA) {
   db.exec(`
     DROP TABLE IF EXISTS players;
     DROP TABLE IF EXISTS teams;
+    DROP TABLE IF EXISTS users;
     `);
 }
 
@@ -26,17 +27,16 @@ db.exec(
         name TEXT NOT NULL,
         points INTEGER NOT NULL,
         team_id INTEGER,
+        user_id INTEGER NOT NULL,
         FOREIGN KEY (team_id) REFERENCES teams(id)
-    );`
-);
-
-db.exec(
-  `CREATE TABLE IF NOT EXISTS users (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    username TEXT UNIQUE NOT NULL,
-    password TEXT NOT NULL
+        FOREIGN KEY (user_id) REFERENCES users(id)
+    );
+    
+    CREATE TABLE IF NOT EXISTS users (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      username TEXT UNIQUE NOT NULL,
+      password TEXT NOT NULL
   );`
 );
-
 console.log("✅ Database schema initialized with foreign key support");
 module.exports = db;

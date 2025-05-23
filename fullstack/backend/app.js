@@ -8,11 +8,14 @@ const app = express();
 
 const playerRoutes = require("./routes/players");
 const authRoutes = require("./routes/auth");
+const teamRoutes = require("./routes/teams");
 
-app.use(cors({
-  origin: 'https://localhost:3000',
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.use(
@@ -25,14 +28,15 @@ app.use(
       maxAge: 1000 * 60 * 60 * 24,
       httpOnly: true,
       secure: false,
+      sameSite: "lax",
     },
   })
 );
 
-
 // Mount your routes
 app.use("/api/players", playerRoutes);
 app.use("/api", authRoutes);
+app.use("/api/teams", teamRoutes);
 
 app.get("/api/test-session", (req, res) => {
   if (!req.session.views) req.session.views = 0;

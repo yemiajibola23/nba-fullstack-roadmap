@@ -14,4 +14,9 @@ function findUserByUsername(username) {
   return stmt.get(username);
 }
 
-module.exports = { createUser, findUserByUsername };
+function findUserById(id) {
+  const stmt = db.prepare("SELECT * FROM users WHERE id = ?");
+  return stmt.get(id);
+}
+
+module.exports = { createUser, findUserByUsername, findUserById };

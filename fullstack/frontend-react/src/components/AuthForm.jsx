@@ -1,13 +1,15 @@
 import { useState } from "react";
 
-function AuthForm() {
+function AuthForm({ onAuthSuccess }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [mode, setMode] = useState("signup");
+  const [mode, setMode] = useState("login");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     const endpoint = mode === "signup" ? "/api/signup" : "/api/login";
 
     try {
@@ -15,7 +17,7 @@ function AuthForm() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
-        credentials: "include"
+        credentials: "include",
       });
 
       const data = await res.json();
@@ -24,8 +26,11 @@ function AuthForm() {
       }
       console.log("Server response:", data);
       setMessage(`✅ ${mode} successful! Welcome ${data.username}.`);
+      onAuthSuccess({ id: data.userId, username: data.username });
     } catch (err) {
       setMessage(`❌ ${err.message}`);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -47,7 +52,7 @@ function AuthForm() {
           onChange={(e) => setPassword(e.target.value)}
         />
         <br />
-        <button type="submit">
+        <button type="submit" disabled={loading}>
           {mode === "signup" ? "Sign Up" : "Log In"}
         </button>
       </form>

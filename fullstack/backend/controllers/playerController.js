@@ -1,21 +1,36 @@
 const playerModel = require("../models/playerModel");
 
-const getPlayersAndTeams = (req, res) => {
-  const players = playerModel.getAllPlayersAndTeams();
+const getPlayers = (req, res) => {
+  const userId = req.session.userId;
+  console.log("🧠 Logged in user ID:", req.session.userId);
+  if (!userId) return res.status(401).json({ error: "Unauthorized" });
+
+  const players = playerModel.getPlayersByUser(userId);
+  console.log("List of players from backend:", players);
   res.json(players);
 };
 
+const getTeams = (req, res) => {
+  const teams = playerModel.getAllTeams();
+
+  res.json(teams);
+};
+
 const addPlayer = (req, res) => {
-  const { name, points } = req.body;
-  if (!name || !points) {
-    return res.status(400).json({ error: "Missing player name or points" });
+  const { name, points, team_id } = req.body;
+  const userId = req.session.userId;
+
+  if (!name || !points || !userId) {
+    return res
+      .status(400)
+      .json({ error: "Missing player name or points, or user session" });
   }
 
   if (playerModel.playerExists(name)) {
     return res.status(409).json({ error: "Player already exists" });
   }
 
-  const result = playerModel.addNewPlayer(name, points);
+  const result = playerModel.addNewPlayer(name, points, userId, team_id);
 
   res.status(201).json(result);
 };
@@ -31,4 +46,4 @@ const deletePlayer = (req, res) => {
   }
 };
 
-module.exports = { getPlayers: getPlayersAndTeams, addPlayer, deletePlayer };
+module.exports = { getPlayers, getTeams, addPlayer, deletePlayer };

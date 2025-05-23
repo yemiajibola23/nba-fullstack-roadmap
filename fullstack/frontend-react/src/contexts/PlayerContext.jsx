@@ -9,16 +9,26 @@ export function PlayerProvider({ children }) {
 
   useEffect(() => {
     setLoading(true);
-
-    fetch("/api/players")
-      .then((res) => res.json())
+    fetch("/api/players", {
+      method: "GET",
+      credentials: "include",
+    })
+      .then(async (res) => {
+        if (!res.ok) {
+          const errorData = await res.text();
+          throw new Error(`Server error: ${res.status} - ${errorData}`);
+        }
+        return res.json();
+      })
       .then((data) => {
+        // console.log("Received player data", data);
         setPlayers(data);
         setError(null);
       })
       .catch((err) => {
         console.error("Error fetching players", err);
         setError("Something went wrong. Please try again.");
+        setPlayers([]);
       })
       .finally(() => setLoading(false));
   }, []);
@@ -45,6 +55,7 @@ export function PlayerProvider({ children }) {
         setPlayers((prev) => prev.filter((p) => p.id !== id));
         setFeedback("🗑️ Player deleted.");
       })
+      .finally(() => setFeedback(""))
       .catch(() => setFeedback("❌ Failed to delete player."));
   };
 

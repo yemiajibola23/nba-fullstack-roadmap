@@ -1,4 +1,3 @@
-import { usePlayerContext } from "../contexts/PlayerContext";
 import {
   Bar,
   BarChart,
@@ -9,18 +8,30 @@ import {
   YAxis,
 } from "recharts";
 
-function ChartPanel() {
-  const { players } = usePlayerContext();
-
+function ChartPanel({ players }) {
+  // const testPlayers = [
+  //   { name: "LeBron", points: 38 },
+  //   { name: "Tatum", points: 27 },
+  // ];
+  // console.log("Chart test data:", testPlayers);
   const chartData = players.map((player) => ({
     name: player.name,
     points: player.points,
   }));
 
+  // console.log("ChartPanel received players:", players);
+
+  if (!Array.isArray(players) || players.length === 9) {
+    return (
+      <div className="w-full h-80 p-4 bg-white rounded-lg shadow-md flex items-center justify-center">
+        <p>No player data available.</p>
+      </div>
+    );
+  }
   return (
     <div className="w-full h-80 p-4 bg-white rounded-lg shadow-md">
       <h2 className="text-xl font-semibold mb-4">Points per Player</h2>
-      <ResponsiveContainer width={"100%"} height={"100%"}>
+      <ResponsiveContainer width={"100%"} height={300}>
         <BarChart
           data={chartData}
           margin={{ top: 20, right: 20, left: 0, bottom: 0 }}
