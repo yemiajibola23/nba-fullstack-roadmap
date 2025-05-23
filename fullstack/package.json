@@ -14,7 +14,8 @@
     "connect-sqlite3": "^0.9.15",
     "cors": "^2.8.5",
     "express": "^5.1.0",
-    "express-session": "^1.18.1"
+    "express-session": "^1.18.1",
+    "multer": "^2.0.0"
   },
   "devDependencies": {
     "jest": "^29.7.0"
