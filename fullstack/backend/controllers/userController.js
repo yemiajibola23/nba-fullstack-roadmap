@@ -15,7 +15,7 @@ async function signup(req, res) {
   try {
     const hashedPassword = await bcrypt.hash(password, 10); // 10 salt rounds
     const user = createUser(username, hashedPassword);
-    req.session.userId = user.id;
+    req.session.user.id = user.id;
     res.status(201).json({ id: user.id, username: user.username });
   } catch (err) {
     if (err.code === "SQLITE_CONSTRAINT_UNIQUE") {
@@ -28,11 +28,11 @@ async function signup(req, res) {
 }
 
 function getCurrentUser(req, res) {
-  if (!req.session.userId) {
+  if (!req.session.user?.id) {
     return res.status(401).json({ error: "Not logged in" });
   }
 
-  const user = findUserById(req.session.userId);
+  const user = findUserById(req.session.user?.id);
   if (!user) {
     return res.status(404).json({ error: "User not found" });
   }
@@ -62,12 +62,14 @@ async function login(req, res) {
     return res.status(401).json({ error: "Invalid credentials" });
   }
 
-  req.session.userId = user.id;
+  req.session.user = { id: user.id, username: user.username };
 
-  res.json({
-    message: "Login successful",
-    userId: user.id,
-    username: user.username,
+  req.session.save(() => {
+    res.json({
+      message: "Login successful",
+      userId: user.id,
+      username: user.username,
+    });
   });
 }
 

@@ -5,11 +5,12 @@ const {
   getProfile,
   updateProfile,
 } = require("../controllers/profileController");
+const requireLogin = require("../middleware/authMiddleware");
 
 // GET user profile
-router.get("/", getProfile);
+router.get("/", requireLogin, getProfile);
 
 // POST updates profile with avatar
-router.post("/", upload.single("avatar"), updateProfile);
+router.post("/", requireLogin, upload.single("avatar"), updateProfile);
 
 module.exports = router;

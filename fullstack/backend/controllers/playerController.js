@@ -1,8 +1,8 @@
 const playerModel = require("../models/playerModel");
 
 const getPlayers = (req, res) => {
-  const userId = req.session.userId;
-  console.log("🧠 Logged in user ID:", req.session.userId);
+  const userId = req.session.user?.id;
+  console.log("🧠 Logged in user ID:", userId);
   if (!userId) return res.status(401).json({ error: "Unauthorized" });
 
   const players = playerModel.getPlayersByUser(userId);
@@ -18,7 +18,7 @@ const getTeams = (req, res) => {
 
 const addPlayer = (req, res) => {
   const { name, points, team_id } = req.body;
-  const userId = req.session.userId;
+  const userId = req.session.user?.id;
 
   if (!name || !points || !userId) {
     return res

@@ -15,6 +15,8 @@ function getProfile(req, res) {
 }
 
 function updateProfile(req, res) {
+  console.log("🧪 Session at update:", req.session);
+
   const userId = req.session.user?.id;
   if (!userId) return res.status(401).json({ error: "Not authenticated" });
 

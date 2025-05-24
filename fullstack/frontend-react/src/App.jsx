@@ -2,6 +2,7 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import AuthForm from "./components/AuthForm";
 import Leaderboard from "./components/Leaderboard";
+import Profile from "./components/Profile";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -34,7 +35,10 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-50">
       {currentUser ? (
-        <Leaderboard currentUser={currentUser} onLogout={handleLogout} />
+        <>
+          <Leaderboard currentUser={currentUser} onLogout={handleLogout} />
+          <Profile />
+        </>
       ) : (
         <AuthForm onAuthSuccess={setCurrentUser} />
       )}

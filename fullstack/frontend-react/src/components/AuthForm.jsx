@@ -16,8 +16,8 @@ function AuthForm({ onAuthSuccess }) {
       const res = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password }),
         credentials: "include",
+        body: JSON.stringify({ username, password }),
       });
 
       const data = await res.json();
@@ -26,7 +26,9 @@ function AuthForm({ onAuthSuccess }) {
       }
       console.log("Server response:", data);
       setMessage(`✅ ${mode} successful! Welcome ${data.username}.`);
-      onAuthSuccess({ id: data.userId, username: data.username });
+      setTimeout(() => {
+        onAuthSuccess({ id: data.userId, username: data.username });
+      }, 50);
     } catch (err) {
       setMessage(`❌ ${err.message}`);
     } finally {
