@@ -12,7 +12,7 @@ const teamRoutes = require("./routes/teams");
 const profileRoutes = require("./routes/profile");
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "http://localhost:5173",
     credentials: true,
   })
 );
@@ -37,12 +37,17 @@ app.use(
 app.use("/api/players", playerRoutes);
 app.use("/api", authRoutes);
 app.use("/api/teams", teamRoutes);
-app, user("/api/profile", profileRoutes);
+app.use("/api/profile", profileRoutes);
 
 app.get("/api/test-session", (req, res) => {
   if (!req.session.views) req.session.views = 0;
   req.session.views++;
   res.json({ views: req.session.views });
+});
+
+app.get("/api/fake-login", (req, res) => {
+  req.session.user = { id: 1, username: "yemi1" }; // 👈 make sure this user exists in your DB
+  res.json({ message: "Session set!" });
 });
 
 module.exports = app;
