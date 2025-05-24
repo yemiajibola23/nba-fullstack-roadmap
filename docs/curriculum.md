@@ -28,7 +28,7 @@
 | 26  | Auth System: Signup/Login                  | Build secure user login/signup with hashed passwords (bcrypt)                                                                |✅ Completed|
 | 27  | Auth Sessions + Middleware                 | Create session-based login using tokens/cookies and auth middleware                                                          |✅ Completed|
 | 28  | User-Specific Data                         | Filter data by current user (e.g. only show their saved players)                                                             |✅ Completed|
-| 29  | Profile Page + Avatar Upload               | Add profile settings page with file upload (avatar or profile details)                                                       | ⬜ Upcoming  |
+| 29  | Profile Page + Avatar Upload               | Add profile settings page with file upload (avatar or profile details)                                                       |✅ Completed|
 | 30  | Day 30 Assessment + AI Preview             | Quiz on auth + sessions; prep for AI/ML integration into project                                                             | ⬜ Upcoming  |
 | 31  | Intro to AI Integration                    | Define AI goals, install Python backend, set up `/ai` folder structure                                                       | ⬜ Upcoming  |
 | 32  | REST API from Python (FastAPI)             | Create Python-based FastAPI server with test endpoint                                                                        | ⬜ Upcoming  |

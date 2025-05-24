@@ -36,6 +36,7 @@ This repo documents my journey building a full stack NBA data visualization and 
 | 26 | Auth system: signup/login + UI | ✅ Completed | [Day 26](notes/day26-reflection.md) |
 | 27 | Auth(Login, Middleware, Logout) | ✅ Completed | [Day 27](notes/day27-reflection.md) |
 | 28 | Implement user-specific player filtering with team integration | ✅ Completed | [Day 28](notes/day28-reflection.md) |
+| 29 | Profile Page + Avatar Upload | ✅ Completed | [Day 29](notes/day29-reflection.md) |
 
 ---
 
