@@ -30,7 +30,7 @@
 | 28  | User-Specific Data                         | Filter data by current user (e.g. only show their saved players)                                                             |✅ Completed|
 | 29  | Profile Page + Avatar Upload               | Add profile settings page with file upload (avatar or profile details)                                                       |✅ Completed|
 | 30  | Day 30 Assessment + AI Preview             | Quiz on auth + sessions; prep for AI/ML integration into project                                                             |✅ Completed|
-| 31  | Intro to AI Integration                    | Define AI goals, install Python backend, set up `/ai` folder structure                                                       | ⬜ Upcoming  |
+| 31  | Intro to AI Integration                    | Define AI goals, install Python backend, set up `/ai` folder structure                                                       |✅ Completed|
 | 32  | REST API from Python (FastAPI)             | Create Python-based FastAPI server with test endpoint                                                                        | ⬜ Upcoming  |
 | 33  | Link Node.js to Python API                 | Make async requests from Node backend to FastAPI for AI tasks                                                                | ⬜ Upcoming  |
 | 34  | AI Dataset Planning + Format               | Decide input/output format for AI (e.g. player profiles, play styles)                                                        | ⬜ Upcoming  |
