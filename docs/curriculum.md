@@ -23,16 +23,16 @@
 | 21  | Player Insights Panel                      | Add expandable section to each player card with more detailed stats                                                          | ✅ Completed |
 | 22  | SQLite: Foreign Keys + Joins               | Add related table (teams), use JOINs in backend routes and React display                                                     | ✅ Completed |
 | 23  | Reusable React Components + Tailwind Setup | Extract `PlayerCard`, `PlayerForm`, and `Leaderboard` as reusable components. Install and configure TailwindCSS for styling. | ✅ Completed |
-| 24  | Charting with Recharts + Tailwind Setup    | Visualize player scoring data with bar/line charts and apply utility-based styling with Tailwind                             |✅ Completed|
-| 25  | Day 25 Assessment + Frontend Reflection    | Reflect on React progress, quiz on context, hooks, and component structure                                                   |✅ Completed|
-| 26  | Auth System: Signup/Login                  | Build secure user login/signup with hashed passwords (bcrypt)                                                                |✅ Completed|
-| 27  | Auth Sessions + Middleware                 | Create session-based login using tokens/cookies and auth middleware                                                          |✅ Completed|
-| 28  | User-Specific Data                         | Filter data by current user (e.g. only show their saved players)                                                             |✅ Completed|
-| 29  | Profile Page + Avatar Upload               | Add profile settings page with file upload (avatar or profile details)                                                       |✅ Completed|
-| 30  | Day 30 Assessment + AI Preview             | Quiz on auth + sessions; prep for AI/ML integration into project                                                             |✅ Completed|
-| 31  | Intro to AI Integration                    | Define AI goals, install Python backend, set up `/ai` folder structure                                                       |✅ Completed|
-| 32  | REST API from Python (FastAPI)             | Create Python-based FastAPI server with test endpoint                                                                        |✅ Completed|
-| 33  | Link Node.js to Python API                 | Make async requests from Node backend to FastAPI for AI tasks                                                                | ⬜ Upcoming  |
+| 24  | Charting with Recharts + Tailwind Setup    | Visualize player scoring data with bar/line charts and apply utility-based styling with Tailwind                             | ✅ Completed |
+| 25  | Day 25 Assessment + Frontend Reflection    | Reflect on React progress, quiz on context, hooks, and component structure                                                   | ✅ Completed |
+| 26  | Auth System: Signup/Login                  | Build secure user login/signup with hashed passwords (bcrypt)                                                                | ✅ Completed |
+| 27  | Auth Sessions + Middleware                 | Create session-based login using tokens/cookies and auth middleware                                                          | ✅ Completed |
+| 28  | User-Specific Data                         | Filter data by current user (e.g. only show their saved players)                                                             | ✅ Completed |
+| 29  | Profile Page + Avatar Upload               | Add profile settings page with file upload (avatar or profile details)                                                       | ✅ Completed |
+| 30  | Day 30 Assessment + AI Preview             | Quiz on auth + sessions; prep for AI/ML integration into project                                                             | ✅ Completed |
+| 31  | Intro to AI Integration                    | Define AI goals, install Python backend, set up `/ai` folder structure                                                       | ✅ Completed |
+| 32  | REST API from Python (FastAPI)             | Create Python-based FastAPI server with test endpoint                                                                        | ✅ Completed |
+| 33  | Link Node.js to Python API                 | Make async requests from Node backend to FastAPI for AI tasks                                                                | ✅ Completed |
 | 34  | AI Dataset Planning + Format               | Decide input/output format for AI (e.g. player profiles, play styles)                                                        | ⬜ Upcoming  |
 | 35  | Mobile Prep: React Native Setup            | Install Expo CLI, scaffold app, configure navigation                                                                         | ⬜ Upcoming  |
 | 36  | Mobile Auth + Login Screen                 | Connect mobile app to backend auth, store token in local storage                                                             | ⬜ Upcoming  |
