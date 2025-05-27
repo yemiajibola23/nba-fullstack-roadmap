@@ -41,6 +41,7 @@ This repo documents my journey building a full stack NBA data visualization and 
 | 31  | Setup Python AI environment + notebook                         | ✅ Completed | [Day 31](notes/day31-reflection.md) |
 | 32  | FastAPI server + /cluster                                      | ✅ Completed | [Day 32](notes/day32-reflection.md) |
 | 33  | Node.js Backend + FastAPI link                                 | ✅ Completed | [Day 33](notes/day33-reflection.md) |
+| 34 | Define player schema + AI data pipeline | ✅ Completed | [Day 34](notes/day34-reflection.md) |
 
 ---
 

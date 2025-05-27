@@ -33,7 +33,7 @@
 | 31  | Intro to AI Integration                    | Define AI goals, install Python backend, set up `/ai` folder structure                                                       | ✅ Completed |
 | 32  | REST API from Python (FastAPI)             | Create Python-based FastAPI server with test endpoint                                                                        | ✅ Completed |
 | 33  | Link Node.js to Python API                 | Make async requests from Node backend to FastAPI for AI tasks                                                                | ✅ Completed |
-| 34  | AI Dataset Planning + Format               | Decide input/output format for AI (e.g. player profiles, play styles)                                                        | ⬜ Upcoming  |
+| 34  | AI Dataset Planning + Format               | Decide input/output format for AI (e.g. player profiles, play styles)                                                        |✅ Completed|
 | 35  | Mobile Prep: React Native Setup            | Install Expo CLI, scaffold app, configure navigation                                                                         | ⬜ Upcoming  |
 | 36  | Mobile Auth + Login Screen                 | Connect mobile app to backend auth, store token in local storage                                                             | ⬜ Upcoming  |
 | 37  | Display Players (GET)                      | Fetch and display leaderboard players using FlatList                                                                         | ⬜ Upcoming  |
