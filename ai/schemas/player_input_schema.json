@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PlayerInput",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "name",
+      "points",
+      "rebounds",
+      "assists",
+      "steals",
+      "blocks",
+      "turnovers",
+      "field_goal_pct",
+      "three_point_pct",
+      "minutes_played"
+    ],
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "points": {
+        "type": "number"
+      },
+      "rebounds": {
+        "type": "number"
+      },
+      "assists": {
+        "type": "number"
+      },
+      "steals": {
+        "type": "number"
+      },
+      "blocks": {
+        "type": "number"
+      },
+      "turnovers": {
+        "type": "number"
+      },
+      "field_goal_pct": {
+        "type": "number"
+      },
+      "three_point_pct": {
+        "type": "number"
+      },
+      "minutes_played": {
+        "type": "number"
+      }
+    }
+  }
+}

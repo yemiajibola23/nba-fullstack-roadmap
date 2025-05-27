@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Steph Curry",
+    "points": 30.1,
+    "rebounds": 5.4,
+    "assists": 6.3,
+    "steals": 1.4,
+    "blocks": 0.2,
+    "turnovers": 3.2,
+    "field_goal_pct": 48.2,
+    "three_point_pct": 42.1,
+    "minutes_played": 34.5
+  },
+  {
+    "name": "Nikola Jokic",
+    "points": 26.5,
+    "rebounds": 11.9,
+    "assists": 9.0,
+    "steals": 1.2,
+    "blocks": 0.7,
+    "turnovers": 3.8,
+    "field_goal_pct": 63.2,
+    "three_point_pct": 35.5,
+    "minutes_played": 33.2
+  },
+  {
+    "name": "Draymond Green",
+    "points": 8.5,
+    "rebounds": 7.2,
+    "assists": 6.8,
+    "steals": 1.0,
+    "blocks": 0.9,
+    "turnovers": 2.4,
+    "field_goal_pct": 53.4,
+    "three_point_pct": 30.2,
+    "minutes_played": 31.1
+  },
+  {
+    "name": "Jayson Tatum",
+    "points": 27.2,
+    "rebounds": 8.6,
+    "assists": 4.7,
+    "steals": 1.1,
+    "blocks": 0.8,
+    "turnovers": 2.9,
+    "field_goal_pct": 47.1,
+    "three_point_pct": 36.9,
+    "minutes_played": 36.0
+  },
+  {
+    "name": "Mikal Bridges",
+    "points": 19.8,
+    "rebounds": 4.3,
+    "assists": 3.5,
+    "steals": 1.6,
+    "blocks": 0.6,
+    "turnovers": 1.7,
+    "field_goal_pct": 46.8,
+    "three_point_pct": 38.3,
+    "minutes_played": 35.7
+  }
+]
