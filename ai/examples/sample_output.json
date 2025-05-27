@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Steph Curry",
+    "cluster_id": 2,
+    "style": "3PT Specialist"
+  },
+  {
+    "name": "Nikola Jokic",
+    "cluster_id": 0,
+    "style": "Point Center"
+  },
+  {
+    "name": "Draymond Green",
+    "cluster_id": 1,
+    "style": "Defensive Playmaker"
+  },
+  {
+    "name": "Jayson Tatum",
+    "cluster_id": 3,
+    "style": "Scoring Forward"
+  },
+  {
+    "name": "Mikal Bridges",
+    "cluster_id": 4,
+    "style": "Two-Way Wing"
+  }
+]

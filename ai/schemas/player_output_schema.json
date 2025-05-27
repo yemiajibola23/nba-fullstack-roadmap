@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PlayerOutput",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["name", "cluster_id", "style"],
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "cluster_id": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "style": {
+        "type": "string"
+      }
+    }
+  }
+}
