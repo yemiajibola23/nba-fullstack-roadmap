@@ -33,8 +33,8 @@
 | 31  | Intro to AI Integration                    | Define AI goals, install Python backend, set up `/ai` folder structure                                                       | ✅ Completed |
 | 32  | REST API from Python (FastAPI)             | Create Python-based FastAPI server with test endpoint                                                                        | ✅ Completed |
 | 33  | Link Node.js to Python API                 | Make async requests from Node backend to FastAPI for AI tasks                                                                | ✅ Completed |
-| 34  | AI Dataset Planning + Format               | Decide input/output format for AI (e.g. player profiles, play styles)                                                        |✅ Completed|
-| 35  | Mobile Prep: React Native Setup            | Install Expo CLI, scaffold app, configure navigation                                                                         |✅ Completed|
+| 34  | AI Dataset Planning + Format               | Decide input/output format for AI (e.g. player profiles, play styles)                                                        | ✅ Completed |
+| 35  | Mobile Prep: React Native Setup            | Install Expo CLI, scaffold app, configure navigation                                                                         | ✅ Completed |
 | 36  | Mobile Auth + Login Screen                 | Connect mobile app to backend auth, store token in local storage                                                             | ⬜ Upcoming  |
 | 37  | Display Players (GET)                      | Fetch and display leaderboard players using FlatList                                                                         | ⬜ Upcoming  |
 | 38  | Add New Player (POST) + Form UI            | Submit form data from mobile app to backend API                                                                              | ⬜ Upcoming  |
@@ -70,3 +70,13 @@
 | 68  | Profile + Insights Dashboard               | Show saved players, rating history, time spent, and AI stats                                                                 | ⬜ Upcoming  |
 | 69  | Offline Support + UX Polish                | Cache last viewed players, improve error handling, responsive design                                                         | ⬜ Upcoming  |
 | 70  | Day 70 Assessment + App Store Plan         | Full mobile quiz, roadmap to publishing (if desired), summarize AI usage                                                     | ⬜ Upcoming  |
+| 71  | Dark Mode + Search                         | Add dark/light theme toggle with persistence + live search bar for players                                                   | ⬜ Upcoming  |
+| 72  | Navbar + Sortable Leaderboard              | Add top nav with React Router and enable stat-based sorting on leaderboard                                                   | ⬜ Upcoming  |
+| 73  | Animation + Player Tagging                 | Add Framer Motion animations + tagging system for custom labels                                                              | ⬜ Upcoming  |
+| 74  | Accessibility + Favorites                  | Add ARIA roles and keyboard nav + ability to favorite players                                                                | ⬜ Upcoming  |
+| 75  | Radar Charts + Player Groups               | Add interactive radar charts and allow grouping players into custom lists                                                    | ⬜ Upcoming  |
+| 76  | UI Library + Notes                         | Introduce Tailwind UI or shadcn/ui + add per-player notes/comments feature                                                   | ⬜ Upcoming  |
+| 77  | UX Polish + Comparison Tool                | Enhance UI feedback for interactions + build player comparison view                                                          | ⬜ Upcoming  |
+| 78  | Frontend Tests + Export/Import Lists       | Write tests for components using React Testing Library + support for CSV/JSON player exports                                 | ⬜ Upcoming  |
+| 79  | Undo/Redo + UX Pass                        | Add undo functionality for actions + audit and polish visual and interaction details                                         | ⬜ Upcoming  |
+| 80  | Final Showcase + Reflection                | Present enhanced app features and UI in final capstone + write UI/UX reflection                                              | ⬜ Upcoming  |
