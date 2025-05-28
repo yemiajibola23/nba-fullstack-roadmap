@@ -41,8 +41,8 @@ This repo documents my journey building a full stack NBA data visualization and 
 | 31  | Setup Python AI environment + notebook                         | ✅ Completed | [Day 31](notes/day31-reflection.md) |
 | 32  | FastAPI server + /cluster                                      | ✅ Completed | [Day 32](notes/day32-reflection.md) |
 | 33  | Node.js Backend + FastAPI link                                 | ✅ Completed | [Day 33](notes/day33-reflection.md) |
-| 34 | Define player schema + AI data pipeline | ✅ Completed | [Day 34](notes/day34-reflection.md) |
-| 35 | React Native App Setup | ✅ Completed | [Day 35](notes/day35-reflection.md) |
+| 34  | Define player schema + AI data pipeline                        | ✅ Completed | [Day 34](notes/day34-reflection.md) |
+| 35  | React Native App Setup                                         | ✅ Completed | [Day 35](notes/day35-reflection.md) |
 
 ---
 
@@ -57,15 +57,22 @@ This repo documents my journey building a full stack NBA data visualization and 
 ## 📂 Folder Structure
 
 <pre> nba-fullstack-roadmap/ 
+nba-fullstack-roadmap/
 ├── backend/             # Express API 
 ├── frontend-react/      # React frontend (Vite-powered)
+├── mobile/              # React Native app (Expo + TypeScript)
+├── ai/                  # AI models, clustering, detection
+│   ├── schemas/         # JSON Schemas
+│   ├── examples/        # Sample data
+│   ├── notebooks/       # Jupyter/Colab development
 ├── landing-page/        # Day 4 static landing page
-├── notes/               # Daily reflections (Markdown) 
+├── notes/               # Daily reflections (Markdown)
 ├── quizzes/             # Daily quizzes and results
-├── scripts/             # Automation scripts (e.g. log_day.sh)
-├── docs/                # curriculum.md, TECH_DEBT.md, etc.
+├── scripts/             # CLI automation (log_day.sh, notion_update.py)
+├── docs/                # curriculum.md, TECH_DEBT.md, architecture diagrams
 ├── PROGRESS.md
 └── README.md
+
 </pre>
 
 ---
