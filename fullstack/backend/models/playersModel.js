@@ -14,15 +14,22 @@ function getPlayersByUser(userId) {
     WHERE players.user_id = ?`
   );
 
-  const allPlayers = db.prepare("SELECT id, name, user_id FROM players").all();
+  const allPlayers = db
+    .prepare(
+      `SELECT 
+      players.id,
+      players.name,
+      players.points,
+      players.team_id,
+      players.user_id,
+      teams.name AS team_name
+    FROM players
+    LEFT JOIN teams ON players.team_id = teams.id`
+    )
+    .all();
   console.log("📦 All players in DB:", allPlayers);
 
-  return stmt.all(userId);
-}
-
-function getAllTeams() {
-  const stmt = db.prepare("SELECT * FROM teams");
-  return stmt.all();
+  return allPlayers;
 }
 
 function playerExists(name) {
@@ -57,7 +64,6 @@ function deletePlayer(id) {
 
 module.exports = {
   getPlayersByUser,
-  getAllTeams,
   addNewPlayer,
   deletePlayer,
   playerExists,

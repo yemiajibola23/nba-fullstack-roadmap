@@ -1,19 +1,13 @@
-const playerModel = require("../models/playerModel");
+const playerModel = require("../models/playersModel");
 
 const getPlayers = (req, res) => {
   const userId = req.session.user?.id;
   console.log("🧠 Logged in user ID:", userId);
-  if (!userId) return res.status(401).json({ error: "Unauthorized" });
+  // if (!userId) return res.status(401).json({ error: "Unauthorized" });
 
   const players = playerModel.getPlayersByUser(userId);
   console.log("List of players from backend:", players);
   res.json(players);
-};
-
-const getTeams = (req, res) => {
-  const teams = playerModel.getAllTeams();
-
-  res.json(teams);
 };
 
 const addPlayer = (req, res) => {
@@ -46,4 +40,4 @@ const deletePlayer = (req, res) => {
   }
 };
 
-module.exports = { getPlayers, getTeams, addPlayer, deletePlayer };
+module.exports = { getPlayers, addPlayer, deletePlayer };
