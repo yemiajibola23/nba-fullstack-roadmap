@@ -12,7 +12,7 @@ I'm doing this to level up my engineering skills, unlock job opportunities in so
 
 ## 🧠 What I’m Building
 
-A full-stack web application that allows users to:
+A full-stack web + mobile application that allows users to:
 
 - 🎥 Upload an NBA play video
 - 🧠 Use AI (object detection + clustering) to analyze it
@@ -28,27 +28,34 @@ It’s part **sports analytics**, part **AI experiment**, and part **personal de
 
 <pre>
 nba-fullstack-roadmap/
-├── /setup # Terminal tools, CLI configs, Git aliases, etc.
-├── /notes # Daily reflections, research, progress logs
+├── /setup         # Terminal tools, CLI configs, Git aliases
+├── /notes         # Daily reflections, research, progress logs
 ├── /fullstack
-│ ├── backend # Express + SQLite API
-│ ├── frontend # Vanilla JS → React + Tailwind UI
-├── /ai # YOLO object detection, clustering, ML scripts
-├── /ios # iOS apps that consume backend/AI services
-├── /portfolio # Polished final builds with documentation
-└── PROGRESS.md # Day-by-day learning and shipping log
+│   ├── backend    # Express + SQLite API (modularized)
+│   ├── frontend   # Vanilla JS → React + Tailwind UI
+├── /mobile        # React Native app (Expo + TypeScript)
+├── /ai
+│   ├── clustering         # KMeans, embeddings
+│   ├── detection          # YOLO object detection models
+│   ├── schemas            # Pydantic JSON schemas (input/output)
+│   ├── examples           # Sample inputs/outputs
+│   ├── notebooks          # ML dev notebooks
+├── /portfolio     # Polished builds + case studies
+├── PROGRESS.md    # Daily learning + shipping log
+├── curriculum.md  # 70-day curriculum
+└── README.md
 </pre>
 
 ---
 
 ## 🔧 Tech Stack
 
-- **Frontend:** HTML → React, TailwindCSS, Vite
-- **Backend:** Node.js, Express, SQLite (PostgreSQL later)
-- **AI/ML:** YOLOv8, OpenCV, clustering, Python
-- **Dev Tools:** ESLint, Prettier, iTerm2, GitHub, Notion
-- **Mobile:** Swift + SwiftUI iOS client (planned)
-- **Cloud (Planned):** Fly.io or Render for full-stack deployment
+- **Frontend:** HTML → React (Vite), TailwindCSS
+- **Backend:** Node.js, Express, SQLite → PostgreSQL (planned)
+- **Mobile:** React Native (Expo) + TypeScript
+- **AI/ML:** Python (YOLOv8, FastAPI, clustering, OpenCV)
+- **Tooling:** ESLint, Prettier, Jest, Notion, GitHub, iTerm2, Shell scripts
+- **Cloud (Planned):** Fly.io or Render
 
 ---
 
@@ -74,7 +81,7 @@ To use basketball as a lens for becoming a **production-grade full stack + AI en
 
 ## 🗂️ Daily Progress
 
-See [`PROGRESS.md`](./docs/PROGRESS.md) for day-by-day logs and reflections.
+See [`PROGRESS.md`](./PROGRESS.md) for day-by-day logs and reflections.
 
 ## 🗂️ Project Architecture
 
