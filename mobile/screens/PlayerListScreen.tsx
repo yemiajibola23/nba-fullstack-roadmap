@@ -17,30 +17,39 @@ const PlayerListScreen: React.FC = () => {
   const [players, setPlayers] = useState<Player[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [refreshing, setRefreshing] = useState<boolean>(false);
+
+  const handleRefresh = async () => {
+    setRefreshing(true);
+    await loadPlayers();
+    setRefreshing(false);
+  };
+
+  const loadPlayers = async () => {
+    try {
+      const res = await fetch("http://localhost:3000/api/players");
+
+      if (!res.ok) throw new Error("Failed to fetch players");
+
+      const data: Player[] = await res.json();
+      setPlayers(data);
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("Unknown error occurred.");
+      }
+    }
+  };
 
   useEffect(() => {
     console.log("🔄 Fetching players...");
-
-    const fetchPlayers = async () => {
-      try {
-        const res = await fetch("http://localhost:3000/api/players");
-
-        if (!res.ok) throw new Error("Failed to fetch players");
-
-        const data: Player[] = await res.json();
-        setPlayers(data);
-      } catch (err: unknown) {
-        if (err instanceof Error) {
-          setError(err.message);
-        } else {
-          setError("Unknown error occurred.");
-        }
-      } finally {
-        setLoading(false);
-      }
+    const fetchAndSet = async () => {
+      await loadPlayers();
+      setLoading(false);
     };
 
-    fetchPlayers();
+    fetchAndSet();
   }, []);
 
   console.log("Loading:", loading);
@@ -61,17 +70,22 @@ const PlayerListScreen: React.FC = () => {
   }
 
   return (
-    <FlatList
-      data={players}
-      keyExtractor={(item) => item.id.toString()}
-      renderItem={({ item }) => (
-        <View style={styles.card}>
-          <Text style={styles.name}>{item.name}</Text>
-          <Text style={styles.points}>Points: {item.points}</Text>
-        </View>
-      )}
-      contentContainerStyle={styles.list}
-    />
+    <View style={{ flex: 1 }}>
+      <Text style={styles.header}>🏀 Player Leaderboard</Text>
+      <FlatList
+        data={players}
+        keyExtractor={(item) => item.id.toString()}
+        refreshing={refreshing}
+        onRefresh={handleRefresh}
+        renderItem={({ item }) => (
+          <View style={styles.card}>
+            <Text style={styles.name}>{item.name}</Text>
+            <Text style={styles.points}>Points: {item.points}</Text>
+          </View>
+        )}
+        contentContainerStyle={styles.list}
+      />
+    </View>
   );
 };
 
@@ -104,5 +118,11 @@ const styles = StyleSheet.create({
   points: {
     fontSize: 16,
     color: "#666",
+  },
+  header: {
+    fontSize: 24,
+    fontWeight: "bold",
+    padding: 16,
+    textAlign: "center",
   },
 });
