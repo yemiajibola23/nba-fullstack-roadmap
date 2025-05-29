@@ -4,18 +4,24 @@ import LoginScreen from "../screens/LoginScreen";
 import LeaderboardScreen from "../screens/LeaderboardScreen";
 import { RootStackParamList } from "./types";
 import TestScreen from "../screens/TestScreen";
+import PlayerListScreen from "../screens/PlayerListScreen";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const AppNavigator: React.FC = () => {
-  console.log("✅ LoginScreen:", LoginScreen);
+  // console.log("✅ LoginScreen:", LoginScreen);
   return (
     <Stack.Navigator
-      initialRouteName="Login"
+      initialRouteName="PlayerList"
       screenOptions={{ headerShown: false }}
     >
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Leaderboard" component={LeaderboardScreen} />
+      <Stack.Screen
+        name="PlayerList"
+        component={PlayerListScreen}
+        options={{ title: "Leaderboard" }}
+      />
     </Stack.Navigator>
   );
 };
