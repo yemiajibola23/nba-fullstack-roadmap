@@ -1,5 +1,5 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { RootStackParamsList } from "../navigation/types";
+import { RootStackParamList } from "../navigation/types";
 import { useState } from "react";
 import {
   StyleSheet,
@@ -9,8 +9,9 @@ import {
   View,
   ActivityIndicator,
 } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
-type Props = NativeStackScreenProps<RootStackParamsList, "Login">;
+type Props = NativeStackScreenProps<RootStackParamList, "Login">;
 
 const LoginScreen: React.FC<Props> = ({ navigation }) => {
   const [username, setUsername] = useState<string>("");
@@ -18,7 +19,43 @@ const LoginScreen: React.FC<Props> = ({ navigation }) => {
   const [errorMsg, setErrorMsg] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
 
-  const handleLogin = () => {};
+  const handleLogin = async () => {
+    if (!username || !password) {
+      setErrorMsg("Username and password required.");
+      return;
+    }
+
+    setLoading(true);
+    setErrorMsg("");
+
+    try {
+      const res = await fetch("http://localhost:3000/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Login failed");
+      }
+      console.log("Login response:", data);
+
+      if (data.userId) {
+        await AsyncStorage.setItem("userId", String(data.userId));
+        console.log("Stored userId:", data.userId);
+      } else {
+        console.warn("No userId returned from backend.");
+      }
+      navigation.navigate("Leaderboard");
+    } catch (err: any) {
+      console.error("Login error:", err);
+      setErrorMsg(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <View style={styles.container}>
