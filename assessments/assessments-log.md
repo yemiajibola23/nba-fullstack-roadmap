@@ -27,3 +27,5 @@
 | 33  | Quiz       | Node → FastAPI Integration                       | 5/5 ✅   | Linked Express route to Python API, validated error handling, tested Postman input/output                                        | [Day 33 Quiz](quizzes/day33-quiz.md)            | May 26, 2025 |
 | 34  | Quiz       | AI Input/Output Schema + Validator Script        | 5/5 ✅   | JSON schema design, data contract planning, and CLI validation with `jsonschema`                                                 | [Day 34 Quiz](quizzes/day34-quiz.md)            | May 27, 2025 |
 | 35  | Quiz       | Mobile App Setup + API Fetching                  | 5/5 ✅   | Expo CLI, navigation stack, FlatList, gesture handler fix, API debug                                                             | [Day 35 Quiz](quizzes/day35-quiz.md)            | May 28, 2025 |
+| 36  | Quiz       | Mobile Auth + AsyncStorage Setup                 | 2/5 ❌   | Login screen, AsyncStorage, NavigationContainer, error handling                                                                  | [Day 36 Quiz](quizzes/day36-quiz.md)            | May 28, 2025 |
+    

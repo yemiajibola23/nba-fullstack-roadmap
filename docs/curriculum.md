@@ -35,7 +35,7 @@
 | 33  | Link Node.js to Python API                 | Make async requests from Node backend to FastAPI for AI tasks                                                                | ✅ Completed |
 | 34  | AI Dataset Planning + Format               | Decide input/output format for AI (e.g. player profiles, play styles)                                                        | ✅ Completed |
 | 35  | Mobile Prep: React Native Setup            | Install Expo CLI, scaffold app, configure navigation                                                                         | ✅ Completed |
-| 36  | Mobile Auth + Login Screen                 | Connect mobile app to backend auth, store token in local storage                                                             | ⬜ Upcoming  |
+| 36  | Mobile Auth + Login Screen                 | Connect mobile app to backend auth, store token in local storage                                                             |✅ Completed|
 | 37  | Display Players (GET)                      | Fetch and display leaderboard players using FlatList                                                                         | ⬜ Upcoming  |
 | 38  | Add New Player (POST) + Form UI            | Submit form data from mobile app to backend API                                                                              | ⬜ Upcoming  |
 | 39  | Mobile Testing + Styling                   | Add basic component tests + polish layout (buttons, inputs, error states)                                                    | ⬜ Upcoming  |
