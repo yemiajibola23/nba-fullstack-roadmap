@@ -35,15 +35,15 @@
 | 33  | Link Node.js to Python API                 | Make async requests from Node backend to FastAPI for AI tasks                                                                | ✅ Completed |
 | 34  | AI Dataset Planning + Format               | Decide input/output format for AI (e.g. player profiles, play styles)                                                        | ✅ Completed |
 | 35  | Mobile Prep: React Native Setup            | Install Expo CLI, scaffold app, configure navigation                                                                         | ✅ Completed |
-| 36  | Mobile Auth + Login Screen                 | Connect mobile app to backend auth, store token in local storage                                                             |✅ Completed|
-| 37  | Display Players (GET)                      | Fetch and display leaderboard players using FlatList                                                                         |✅ Completed|
+| 36  | Mobile Auth + Login Screen                 | Connect mobile app to backend auth, store token in local storage                                                             | ✅ Completed |
+| 37  | Display Players (GET)                      | Fetch and display leaderboard players using FlatList                                                                         | ✅ Completed |
 | 38  | Add New Player (POST) + Form UI            | Submit form data from mobile app to backend API                                                                              | ⬜ Upcoming  |
 | 39  | Mobile Testing + Styling                   | Add basic component tests + polish layout (buttons, inputs, error states)                                                    | ⬜ Upcoming  |
 | 40  | Day 40 Assessment + Tech Debt              | Evaluate ML pipeline + reconnect to roadmap, fix any full-stack issues                                                       | ⬜ Upcoming  |
-| 41  | Visualize AI Output (Frontend)             | Show clustered player groups using color-coded charts or grouped cards                                                       | ⬜ Upcoming  |
-| 42  | Upload Player CSV + Infer Cluster          | Upload a CSV of player stats and classify each via AI API                                                                    | ⬜ Upcoming  |
+| 41  | Balldontlie API: Seed Real Players         | Add backend route or CLI to fetch and store player data by name                                                              | ⬜ Upcoming  |
+| 42  | Real Stats on Leaderboard                  | Extend leaderboard to show real NBA stats (pts, reb, ast, fg%)                                                               | ⬜ Upcoming  |
 | 43  | Document AI Module (README + Code)         | Add markdown documentation, schema diagrams, and inline code comments                                                        | ⬜ Upcoming  |
-| 44  | User Feedback Loop for AI                  | Allow users to label clusters or correct classifications                                                                     | ⬜ Upcoming  |
+| 44  | Mobile: Import Real Player                 | Add import button and search flow using Balldontlie on mobile                                                                | ⬜ Upcoming  |
 | 45  | Day 45 Assessment + AI Tech Debt           | Quiz on clustering + AI infra. Clean up, refactor, and document issues                                                       | ⬜ Upcoming  |
 | 46  | Supervised ML: Success Prediction          | Define features + labels for predicting play success                                                                         | ⬜ Upcoming  |
 | 47  | Train Play Success Classifier              | Build and evaluate supervised model (e.g. Logistic Regression, XGBoost)                                                      | ⬜ Upcoming  |

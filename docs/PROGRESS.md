@@ -43,8 +43,8 @@ This repo documents my journey building a full stack NBA data visualization and 
 | 33  | Node.js Backend + FastAPI link                                 | ✅ Completed | [Day 33](notes/day33-reflection.md) |
 | 34  | Define player schema + AI data pipeline                        | ✅ Completed | [Day 34](notes/day34-reflection.md) |
 | 35  | React Native App Setup                                         | ✅ Completed | [Day 35](notes/day35-reflection.md) |
-| 36 | Mobile login screen with auth | ✅ Completed | [Day 36](notes/day36-reflection.md) |
-| 37 | PlayerList screen with fetch + refresh | ✅ Completed | [Day 37](notes/day37-reflection.md) |
+| 36  | Mobile login screen with auth                                  | ✅ Completed | [Day 36](notes/day36-reflection.md) |
+| 37  | PlayerList screen with fetch + refresh                         | ✅ Completed | [Day 37](notes/day37-reflection.md) |
 
 ---
 
