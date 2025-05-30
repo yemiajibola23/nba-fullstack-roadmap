@@ -46,6 +46,7 @@ This repo documents my journey building a full stack NBA data visualization and 
 | 36  | Mobile login screen with auth                                  | ✅ Completed | [Day 36](notes/day36-reflection.md) |
 | 37  | PlayerList screen with fetch + refresh                         | ✅ Completed | [Day 37](notes/day37-reflection.md) |
 | 38 | Add Player (POST + form) | ✅ Completed | [Day 38](notes/day38-reflection.md) |
+| 39 | Style Mobile form + list | ✅ Completed | [Day 39](notes/day39-reflection.md) |
 
 ---
 
