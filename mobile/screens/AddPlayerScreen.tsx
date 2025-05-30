@@ -1,5 +1,16 @@
-import { View, Text, StyleSheet, TextInput, Button, Alert } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  Button,
+  Alert,
+  TouchableOpacity,
+  KeyboardAvoidingView,
+  Platform,
+} from "react-native";
 import { useState } from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function AddPlayerScreen() {
   const [name, setName] = useState("");
@@ -54,38 +65,49 @@ export default function AddPlayerScreen() {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Add New Player</Text>
-      <TextInput
-        value={name}
-        placeholder={"Name"}
-        onChangeText={setName}
-        style={styles.input}
-      />
-      <TextInput
-        value={points}
-        placeholder={"Points"}
-        keyboardType="numeric"
-        onChangeText={setPoints}
-        style={styles.input}
-      />
+    <SafeAreaView style={styles.container}>
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.OS === "ios" ? "padding" : undefined}
+      >
+        <Text style={styles.title}>Add New Player</Text>
+        <TextInput
+          value={name}
+          placeholder={"Name"}
+          onChangeText={setName}
+          style={styles.input}
+        />
+        <TextInput
+          value={points}
+          placeholder={"Points"}
+          keyboardType="numeric"
+          onChangeText={setPoints}
+          style={styles.input}
+        />
 
-      <Button
-        title="Add Player"
-        disabled={!name || !points}
-        onPress={addNewPlayer}
-      />
-    </View>
+        <TouchableOpacity
+          style={[styles.button, !(name && points) && styles.buttonDisabled]}
+          disabled={!name || !points}
+          onPress={addNewPlayer}
+        >
+          <Text style={styles.buttonText}>Add Player</Text>
+        </TouchableOpacity>
+      </KeyboardAvoidingView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     padding: 20,
+    justifyContent: "center",
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
+    marginBottom: 24,
+    textAlign: "center",
   },
   input: {
     borderWidth: 1,
@@ -93,5 +115,19 @@ const styles = StyleSheet.create({
     padding: 12,
     marginBottom: 12,
     borderRadius: 8,
+  },
+  button: {
+    backgroundColor: "#0066cc",
+    padding: 14,
+    borderRadius: 8,
+    alignItems: "center",
+  },
+  buttonDisabled: {
+    backgroundColor: "#ccc",
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "600",
   },
 });
