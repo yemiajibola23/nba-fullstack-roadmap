@@ -13,7 +13,7 @@ const AppNavigator: React.FC = () => {
   // console.log("✅ LoginScreen:", LoginScreen);
   return (
     <Stack.Navigator
-      initialRouteName="AddPlayer"
+      initialRouteName="Leaderboard"
       screenOptions={{ headerShown: false }}
     >
       <Stack.Screen name="Login" component={LoginScreen} />
