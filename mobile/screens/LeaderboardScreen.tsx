@@ -1,21 +1,30 @@
 // mobile/screens/LeaderboardScreen.tsx
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, FlatList } from "react-native";
 import { usePlayerContext } from "../contexts/PlayerContext";
 
 export default function LeaderboardScreen() {
   const { players, fetchPlayers } = usePlayerContext();
+  const [loading, setLoading] = React.useState(true);
 
   useEffect(() => {
-    fetchPlayers();
+    const fetchData = async () => {
+      setLoading(true);
+      await fetchPlayers();
+      setLoading(false);
+    };
+
+    fetchData();
   }, []);
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>🏀 Leaderboard!</Text>
-
-      <FlatList
+      { loading ? (
+        <Text>Loading...</Text>
+      ) : (
+        <FlatList
         data={players}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
@@ -24,7 +33,12 @@ export default function LeaderboardScreen() {
             <Text style={styles.points}>{item.points} pts</Text>
           </View>
         )}
+        ListEmptyComponent={
+          <Text style={styles.emptyText}>No players yet. Add one to get started!</Text>
+        }
       />
+      )}
+      
     </View>
   );
 }
@@ -41,4 +55,10 @@ const styles = StyleSheet.create({
   },
   name: { fontSize: 18 },
   points: { fontSize: 16, fontWeight: "600" },
+  emptyText: {
+  textAlign: "center",
+  marginTop: 20,
+  color: "#999",
+  fontSize: 16,
+},
 });
