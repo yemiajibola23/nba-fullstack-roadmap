@@ -99,25 +99,33 @@ const styles = StyleSheet.create({
   },
 
   list: {
-    padding: 16,
+    paddingHorizontal: 16,
+    paddingTop: 20,
+    paddingBottom: 40,
   },
   card: {
-    backgroundColor: "#fff",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    backgroundColor: "#f8f8f8f8",
     padding: 16,
     marginBottom: 12,
-    borderRadius: 8,
+    borderRadius: 12,
     shadowColor: "#000",
     shadowOpacity: 0.1,
-    shadowRadius: 4,
+    shadowRadius: 6,
+    shadowOffset: { width: 0, height: 2 },
     elevation: 2,
   },
   name: {
     fontSize: 18,
     fontWeight: "bold",
+    marginBottom: 4,
+    color: "#333",
   },
   points: {
     fontSize: 16,
     color: "#666",
+    fontWeight: "500",
   },
   header: {
     fontSize: 24,
