@@ -45,6 +45,7 @@ This repo documents my journey building a full stack NBA data visualization and 
 | 35  | React Native App Setup                                         | ✅ Completed | [Day 35](notes/day35-reflection.md) |
 | 36  | Mobile login screen with auth                                  | ✅ Completed | [Day 36](notes/day36-reflection.md) |
 | 37  | PlayerList screen with fetch + refresh                         | ✅ Completed | [Day 37](notes/day37-reflection.md) |
+| 38 | Add Player (POST + form) | ✅ Completed | [Day 38](notes/day38-reflection.md) |
 
 ---
 

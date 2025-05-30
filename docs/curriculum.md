@@ -37,7 +37,7 @@
 | 35  | Mobile Prep: React Native Setup            | Install Expo CLI, scaffold app, configure navigation                                                                         | ✅ Completed |
 | 36  | Mobile Auth + Login Screen                 | Connect mobile app to backend auth, store token in local storage                                                             | ✅ Completed |
 | 37  | Display Players (GET)                      | Fetch and display leaderboard players using FlatList                                                                         | ✅ Completed |
-| 38  | Add New Player (POST) + Form UI            | Submit form data from mobile app to backend API                                                                              | ⬜ Upcoming  |
+| 38  | Add New Player (POST) + Form UI            | Submit form data from mobile app to backend API                                                                              |✅ Completed|
 | 39  | Mobile Testing + Styling                   | Add basic component tests + polish layout (buttons, inputs, error states)                                                    | ⬜ Upcoming  |
 | 40  | Day 40 Assessment + Tech Debt              | Evaluate ML pipeline + reconnect to roadmap, fix any full-stack issues                                                       | ⬜ Upcoming  |
 | 41  | Balldontlie API: Seed Real Players         | Add backend route or CLI to fetch and store player data by name                                                              | ⬜ Upcoming  |
