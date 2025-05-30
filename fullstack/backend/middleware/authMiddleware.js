@@ -1,5 +1,5 @@
 function requireLogin(req, res, next) {
-    console.log('Session at protected route:', req.session)
+  console.log("Session at protected route:", req.session);
   if (req.session && req.session.user?.id) {
     next(); //user is logged in
   } else {

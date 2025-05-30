@@ -12,7 +12,8 @@ const requireLogin = require("../middleware/authMiddleware");
 router.get("/", getPlayers);
 
 // POST /api/players
-router.post("/", requireLogin, addPlayer);
+// Temp workaroud for mobile.
+router.post("/", /*requireLogin,*/ addPlayer);
 
 //DELETE /api/players
 router.delete("/:id", deletePlayer);
