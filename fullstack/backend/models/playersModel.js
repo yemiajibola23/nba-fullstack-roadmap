@@ -14,6 +14,10 @@ function getPlayersByUser(userId) {
     WHERE players.user_id = ?`
   );
 
+  return stmt.all(userId);
+}
+
+function getAllPlayers() {
   const allPlayers = db
     .prepare(
       `SELECT 
@@ -45,8 +49,7 @@ function addNewPlayer(name, points, userId, teamId) {
     "INSERT INTO players (name, points, user_id, team_id) VALUES(?, ?, ?, ?)"
   );
 
-  // Temporary fix to get around mobile auth.
-  const result = stmt.run(name, points, "1", teamId);
+  const result = stmt.run(name, points, userId, teamId);
 
   return {
     id: result.lastInsertRowid,
@@ -57,9 +60,9 @@ function addNewPlayer(name, points, userId, teamId) {
   };
 }
 
-function deletePlayer(id) {
-  const stmt = db.prepare("DELETE FROM players WHERE id = ?");
-  const result = stmt.run(id);
+function deletePlayer(id, userId) {
+  const stmt = db.prepare("DELETE FROM players WHERE id = ? AND user_id = ?");
+  const result = stmt.run(id, userId);
 
   return result.changes > 0;
 }
@@ -69,4 +72,5 @@ module.exports = {
   addNewPlayer,
   deletePlayer,
   playerExists,
+  getAllPlayers,
 };

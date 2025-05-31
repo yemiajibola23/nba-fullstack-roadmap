@@ -1,9 +1,9 @@
 const playerModel = require("../models/playersModel");
 
 const getPlayers = (req, res) => {
-  const userId = req.session.user?.id;
+  const userId = req.session.user?.id || 1;
   console.log("🧠 Logged in user ID:", userId);
-  // if (!userId) return res.status(401).json({ error: "Unauthorized" });
+  if (!userId) return res.status(401).json({ error: "Unauthorized" });
 
   const players = playerModel.getPlayersByUser(userId);
   console.log("List of players from backend:", players);
@@ -12,10 +12,10 @@ const getPlayers = (req, res) => {
 
 const addPlayer = (req, res) => {
   const { name, points, team_id } = req.body;
-  const userId = req.session.user?.id;
+  const userId = req.session.user?.id || 1;
 
   // Work around for mobile auth
-  if (!name || !points /*|| !userId*/) {
+  if (!name || !points || !userId) {
     return res.status(400).json({ error: "Missing player name or points" });
   }
 
@@ -30,7 +30,9 @@ const addPlayer = (req, res) => {
 
 const deletePlayer = (req, res) => {
   const id = req.params.id;
-  const success = playerModel.deletePlayer(id);
+  const userId = req.session.user?.id || 1;
+
+  const success = playerModel.deletePlayer(id, userId);
 
   if (success) {
     res.json({ message: "Player deleted." });

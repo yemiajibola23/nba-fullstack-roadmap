@@ -24,6 +24,7 @@ describe("POST /api/players", () => {
     const newPlayer = {
       name: "Test Player",
       points: 42,
+      user_id: 1,
     };
 
     const res = await request(app).post("/api/players").send(newPlayer);
@@ -38,12 +39,15 @@ describe("POST /api/players", () => {
 describe("DELETE /api/players", () => {
   it("should delete a new player and return confirmation", async () => {
     const newPlayer = {
-      name: "LeBron James",
-      points: 40238,
+      name: "Kobe Bryant",
+      points: 33000,
+      user_id: 1,
     };
 
     const res = await request(app).post("/api/players").send(newPlayer);
     const id = res.body.id;
+
+    console.log("POST response:", res.body);
 
     const deleteRes = await request(app).delete(`/api/players/${id}`);
     expect(deleteRes.statusCode).toBe(200);
