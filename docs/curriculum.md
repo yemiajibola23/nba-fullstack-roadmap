@@ -40,7 +40,7 @@
 | 38          | Add New Player (POST) + Form UI            | Submit form data from mobile app to backend API                                                                              | ✅ Completed |
 | 39          | Mobile Testing + Styling                   | Add basic component tests + polish layout (buttons, inputs, error states)                                                    | ✅ Completed |
 | 40          | Day 40 Assessment + Tech Debt              | Evaluate ML pipeline + reconnect to roadmap, fix any full-stack issues                                                       | ✅ Completed |
-| 41          | Balldontlie API: Seed Real Players         | Created modular `teams` and `nba_players` schemas, seeded Balldontlie teams + 100 players, validated FK integrity            | ✅ Completed |
+| 41          | Balldontlie API: Seed Real Players         | Created modular `teams` and `nba_players` schemas, seeded Balldontlie teams + 100 players, validated FK integrity            |✅ Completed|
 | 42          | GET /nba_players route + Pagination        | Add API route for NBA players with pagination + filters. Extend seeding script to pull all players.                          | ⬜ Upcoming  |
 | 43          | Display Real Stats on Leaderboard          | Show real players on leaderboard with key stats (e.g. points, team, position)                                                | ⬜ Upcoming  |
 | 44          | Mobile: Import Real Player                 | Add import button and player search (autocomplete or filter) on mobile using real data                                       | ⬜ Upcoming  |
