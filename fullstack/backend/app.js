@@ -10,7 +10,8 @@ const playerRoutes = require("./routes/players");
 const authRoutes = require("./routes/auth");
 const teamRoutes = require("./routes/teams");
 const profileRoutes = require("./routes/profile");
-const clusterRoutes = require('./routes/cluster')
+const clusterRoutes = require("./routes/cluster");
+const nbaPlayerRoutes = require("./routes/nbaPlayers");
 
 app.use(
   cors({
@@ -40,7 +41,8 @@ app.use("/api/players", playerRoutes);
 app.use("/api", authRoutes);
 app.use("/api/teams", teamRoutes);
 app.use("/api/profile", profileRoutes);
-app.use('/api/cluster', clusterRoutes)
+app.use("/api/cluster", clusterRoutes);
+app.use("/api/nba_players", nbaPlayerRoutes);
 
 app.get("/api/test-session", (req, res) => {
   if (!req.session.views) req.session.views = 0;
