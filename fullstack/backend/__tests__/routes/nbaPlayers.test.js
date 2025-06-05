@@ -32,6 +32,23 @@ describe("GET /api/nba_players with pagination", () => {
     expect(res.statusCode).toBe(200);
     expect(Array.isArray(res.body.players)).toBe(true);
     expect(res.body.players.length).toBe(5);
-    expect(res.body.total).toBe(100);
+    expect(res.body.total).toBe(12);
+  });
+
+  it("defaults to page 1 and limit 10 if query is missing", async () => {
+    const res = await request(app).get("/api/nba_players");
+
+    expect(res.statusCode).toBe(200);
+    expect(res.body.players.length).toBe(10);
+    expect(res.body.players[0].first_name).toBe("Player1");
+    expect(res.body.total).toBe(12);
+  });
+
+  it("returns empty array if page is out of bounds", async () => {
+    const res = await request(app).get("/api/nba_players?page=5&limit=10");
+
+    expect(res.statusCode).toBe(200);
+    expect(res.body.players.length).toBe(0);
+    expect(res.body.total).toBe(12);
   });
 });

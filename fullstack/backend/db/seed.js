@@ -1,5 +1,10 @@
 const db = require("./index");
 
+if (process.env.NODE_ENV == "test") {
+  console.log("🧪 Skipping seed during test mode.");
+  return;
+}
+
 // Check if teams or players already exist
 const teamsCount = db
   .prepare(`SELECT COUNT(*) AS count FROM teams`)

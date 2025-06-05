@@ -1,23 +1,7 @@
-const path = require("path");
 const Database = require("better-sqlite3");
+const initializeSchema = require('./schema')
 
-const dbPath = path.join(__dirname, "nba.test.db");
-const db = new Database(dbPath); // No verbose for tests
-const createNBAPlayersTable = require("./schema/nba_players");
-const createTeamsTable = require("./schema/teams");
-
-db.pragma("foreign_keys = ON");
-
-createTeamsTable?.(db);
-createNBAPlayersTable(db);
-
-// Ensure schema exists (you can extract this if needed)
-db.exec(`
-  CREATE TABLE IF NOT EXISTS players (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
-    points INTEGER NOT NULL
-  );
-`);
+db = new Database(":memory:")
+initializeSchema(db);
 
 module.exports = db;

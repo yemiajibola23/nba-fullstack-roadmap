@@ -1,10 +1,15 @@
 const express = require("express");
-const router = express.Router();
-const {
-  getPaginatedNBAPlayers,
-} = require("../controllers/nbaPlayersController");
+const createNBAPlayersModel = require("../models/nbaPlayersModel");
+const createNBAPlayersController = require("../controllers/nbaPlayersController");
 
-// GET /api/nba_players
-router.get("/", getPaginatedNBAPlayers);
+module.exports = function (dbInstance) {
+  const router = express.Router();
 
-module.exports = router;
+  const model = createNBAPlayersModel(dbInstance);
+  const controller = createNBAPlayersController(model);
+
+  // GET /api/nba_players
+  router.get("/", controller.getPaginatedNBAPlayers);
+
+  return router;
+};

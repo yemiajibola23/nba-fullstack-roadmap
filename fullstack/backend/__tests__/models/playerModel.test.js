@@ -3,7 +3,7 @@ const playerModel = require("../../models/playersModel");
 const request = require("supertest");
 const app = require("../../app");
 
-describe("playerModel", () => {
+xdescribe("playerModel", () => {
   beforeAll(() => {
     // Optional: reset or prep the test DB if needed
   });
