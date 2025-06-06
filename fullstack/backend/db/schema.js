@@ -38,6 +38,11 @@ module.exports = function initializeSchema(db) {
       draft_year INTEGER,
       draft_round INTEGER,
       draft_number INTEGER,
+      ppg REAL,
+      apg REAL,
+      rpg REAL,
+      fg_pct REAL,
+      fg3_pct REAL,
       team_id INTEGER,
       FOREIGN KEY(team_id) REFERENCES teams(id)
     )
