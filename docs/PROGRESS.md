@@ -50,6 +50,7 @@ This repo documents my journey building a full stack NBA data visualization and 
 | 40 | Cumulative Assessment+Tech Debt | ✅ Completed | [Day 40](notes/day40-reflection.md) |
 | 41 | Balldontlie API Integration + Database Seeding | ✅ Completed | [Day 41](notes/day41-reflection.md) |
 | 42 | NBA Players Routes Pagination + DI | ✅ Completed | [Day 42](notes/day42-reflection.md) |
+| 43 | Real Stats + Leaderboard | ✅ Completed | [Day 43](notes/day43-reflection.md) |
 
 ---
 
