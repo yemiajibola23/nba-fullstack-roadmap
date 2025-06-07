@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { getTeams } = require("../controllers/teamsController"); // or move to teamController later
+const { getTeams } = require("../controllers/teamsController");
 
 router.get("/", getTeams); // GET /api/teams
 

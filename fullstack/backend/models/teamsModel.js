@@ -4,3 +4,5 @@ function getAllTeams() {
   const stmt = db.prepare("SELECT * FROM teams");
   return stmt.all();
 }
+
+module.exports = { getAllTeams };

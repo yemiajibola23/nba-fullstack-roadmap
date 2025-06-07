@@ -9,7 +9,7 @@ export function PlayerProvider({ children }) {
 
   useEffect(() => {
     setLoading(true);
-    fetch("/api/players", {
+    fetch("/api/nba_players", {
       method: "GET",
       credentials: "include",
     })
@@ -21,7 +21,7 @@ export function PlayerProvider({ children }) {
         return res.json();
       })
       .then((data) => {
-        // console.log("Received player data", data);
+        console.log("Received player data", data);
         setPlayers(data);
         setError(null);
       })
