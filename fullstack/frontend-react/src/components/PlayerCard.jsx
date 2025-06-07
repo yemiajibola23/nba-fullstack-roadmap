@@ -3,15 +3,24 @@ import PlayerInsights from "./PlayerInsights";
 
 function PlayerCard({ player, onDelete }) {
   const [showInsights, setShowInsights] = useState(false);
+
+  function format(value) {
+    return typeof value === "number" ? value.toFixed(1) : "N/A";
+  }
+
   return (
     <div className="player-card">
       <h3>
-        {player.name}{" "}
+        {player.first_name} {player.last_name}{" "}
         <span style={{ fontWeight: "normal" }}>
           ({player.team_name || "No Team"})
         </span>
       </h3>
-      <p>Points: {player.points}</p>
+      <p>
+        {format(player.ppg)} ppg | {format(player.apg)} apg |{" "}
+        {format(player.rpg)} rpg | {format(player.fg_pct)}% FG |{" "}
+        {format(player.fg3_pct)}% 3P
+      </p>
       <button
         className="delete-button"
         onClick={() => onDelete(player.id)}

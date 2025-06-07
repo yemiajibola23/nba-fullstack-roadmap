@@ -22,7 +22,7 @@ export function PlayerProvider({ children }) {
       })
       .then((data) => {
         console.log("Received player data", data);
-        setPlayers(data);
+        setPlayers(data.players);
         setError(null);
       })
       .catch((err) => {

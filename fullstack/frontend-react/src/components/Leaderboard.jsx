@@ -10,8 +10,8 @@ function Leaderboard(/*{ currentUser, onLogout }*/) {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
 
-  console.log("Raw players value:", players);
   const safePlayers = Array.isArray(players) ? players : [];
+  console.log("Is players an array?: ", Array.isArray(players));
 
   // const uniquePlayers = players
   //   // .filter((p) => p.user_id === currentUser.id)
@@ -25,7 +25,9 @@ function Leaderboard(/*{ currentUser, onLogout }*/) {
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+
   const currentPlayers = safePlayers.slice(indexOfFirstItem, indexOfLastItem);
+  console.log("Current players:", currentPlayers);
   const totalPages = Math.ceil(safePlayers.length / itemsPerPage);
 
   // console.log("Players list", players);
