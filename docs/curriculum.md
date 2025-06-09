@@ -42,15 +42,15 @@
 | 40  | Day 40 Assessment + Tech Debt              | Evaluate ML pipeline + reconnect to roadmap, fix any full-stack issues                                                       | ✅ Completed |
 | 41  | Balldontlie API: Seed Real Players         | Created modular `teams` and `nba_players` schemas, seeded Balldontlie teams + 100 players, validated FK integrity            | ✅ Completed |
 | 42  | GET /nba_players route + Pagination        | Add API route for NBA players with pagination + filters. Extend seeding script to pull all players.                          | ✅ Completed |
-| 43  | Display Real Stats on Leaderboard          | Show real players on leaderboard with key stats (e.g. points, team, position)                                                |✅ Completed|
-| 44  | Mobile: Import Real Player                 | Add import button and player search (autocomplete or filter) on mobile using real data                                       | ⬜ Upcoming  |
-| 45  | Day 45 Assessment + AI Tech Debt           | Quiz on clustering + AI infra. Clean up, refactor, and document issues                                                       | ⬜ Upcoming  |
-| 46  | Supervised ML: Success Prediction          | Define features + labels for predicting play success                                                                         | ⬜ Upcoming  |
-| 47  | Train Play Success Classifier              | Build and evaluate supervised model (e.g. Logistic Regression, XGBoost)                                                      | ⬜ Upcoming  |
-| 48  | Predict from Uploaded Play Data            | Create API route to upload play data and return success likelihood                                                           | ⬜ Upcoming  |
-| 49  | Frontend: Show Prediction Outcome          | Display success probability for uploaded play in UI                                                                          | ⬜ Upcoming  |
-| 50  | Day 50 Assessment + Tech Debt              | Quiz on supervised learning and model evaluation. Clear ML-related backlog                                                   | ⬜ Upcoming  |
-| 51  | NBA Player Recommendation Engine           | Design recommendation logic based on play style and user interaction                                                         | ⬜ Upcoming  |
+| 43  | Display Real Stats on Leaderboard          | Show real players on leaderboard with key stats (e.g. points, team, position)                                                | ✅ Completed |
+| 44  | Stat UI Polishing + Tests                  | Finalize player stat formatting on the leaderboard, add tooltips or labels, and write component-level tests for stat display | ⬜ Upcoming  |
+| 45  | Mobile: Import Real Player                 | Add search/import on mobile using `nba_players` data (autocomplete or filter), render card with real stats                   | ⬜ Upcoming  |
+| 46  | Supervised ML: Success Prediction          | Define features/labels for play success prediction (e.g. points, spacing, defender proximity)                                | ⬜ Upcoming  |
+| 47  | Train Play Success Classifier              | Train supervised model (Logistic Regression, XGBoost, etc.), evaluate accuracy with metrics                                  | ⬜ Upcoming  |
+| 48  | Predict from Uploaded Play Data            | Build endpoint to receive play data (JSON or CSV) and return success likelihood from model                                   | ⬜ Upcoming  |
+| 49  | Frontend: Show Prediction Outcome          | Display play success likelihood visually in web/mobile UI (e.g. confidence score, visual tag)                                | ⬜ Upcoming  |
+| 50  | Day 50 Assessment + Tech Debt              | Quiz on supervised learning + prediction pipeline. Address lingering AI integration bugs or model improvements               | ⬜ Upcoming  |
+| 51  | BA Player Recommendation Engine            | Design recommendation logic based on play style and user interaction                                                         | ⬜ Upcoming  |
 | 52  | Train Collaborative Filter Model           | Use simple user→player or play→player similarity (matrix or content-based)                                                   | ⬜ Upcoming  |
 | 53  | Recommend Similar Players                  | Add endpoint: get related players based on viewing or tagging                                                                | ⬜ Upcoming  |
 | 54  | Frontend: Rec Carousel Component           | Create UI to browse recommended players after selecting one                                                                  | ⬜ Upcoming  |
